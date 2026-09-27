@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Daily rebuild so resume edits made in Overleaf reach the site on their own.
+  schedule:
+    - cron: '17 11 * * *'
 
 permissions:
   contents: read
@@ -17,6 +20,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      OVERLEAF_PROJECT_ID: ${{ secrets.OVERLEAF_PROJECT_ID }}
+      OVERLEAF_TOKEN: ${{ secrets.OVERLEAF_TOKEN }}
+      OVERLEAF_MAIN_FILE: ${{ secrets.OVERLEAF_MAIN_FILE }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,6 +32,15 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+      # Without the Overleaf secrets, the committed resume PDF is used as-is.
+      - name: Install tectonic (LaTeX engine)
+        if: env.OVERLEAF_TOKEN != ''
+        run: |
+          curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net | sh
+          sudo mv tectonic /usr/local/bin/
+      - name: Pull resume from Overleaf and compile it
+        if: env.OVERLEAF_TOKEN != ''
+        run: bash scripts/overleaf-resume.sh
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

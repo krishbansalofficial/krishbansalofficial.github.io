@@ -60,6 +60,7 @@
             "minibash",
             "malloc",
             "regime",
+            "streaming",
             "real-estate",
             "playlist",
             "inventory"
@@ -113,6 +114,7 @@
             "minibash",
             "malloc",
             "regime",
+            "streaming",
             "real-estate",
             "playlist",
             "inventory",
@@ -133,7 +135,8 @@
             "regime",
             "dataism",
             "keshav",
-            "real-estate"
+            "real-estate",
+            "streaming"
           ]
         },
         {
@@ -772,6 +775,43 @@
         "from": "#1d4ed8",
         "to": "#030817",
         "glyph": "0x"
+      }
+    },
+    {
+      "id": "streaming",
+      "type": "project",
+      "title": "The Streaming Effect",
+      "subtitle": "How streaming reshaped the music industry · Data science team project",
+      "period": "Spring 2026",
+      "year": 2026,
+      "match": 96,
+      "rating": "DATA",
+      "summary": "A four-person data science study of how streaming changed the music industry from 2000 to 2025: song length, revenue by format, and genre popularity, built on data we scraped and cleaned ourselves.",
+      "bullets": [
+        "Scraped Billboard Hot 100 year-end charts for 2000–2025, using Playwright for Billboard's dynamically loaded pages and pandas.read_html on Wikipedia tables for 2000–2005, then filled missing ranks and removed duplicates across sources",
+        "Built the song-genre dataset: when the Spotify and YouTube APIs proved too rate-limited and sparse, scraped MusicBrainz and normalized its many subgenres to main genres verified against Wikipedia",
+        "Found that the decline in average Hot 100 song length roughly doubled in rate after Billboard began counting streams in 2014, since each stream earns chart points regardless of length",
+        "Showed with RIAA revenue data that streaming overtook other formats around 2015–2016, averaging $8.2B per year in the streaming era versus $0.2B before it, visualized with line, stacked bar, pie, and heatmap charts"
+      ],
+      "tags": [
+        "Python",
+        "pandas",
+        "Playwright",
+        "Web Scraping",
+        "Spotify API",
+        "MusicBrainz",
+        "Matplotlib",
+        "Jupyter"
+      ],
+      "genres": [
+        "Data Science",
+        "Data Engineering"
+      ],
+      "badge": "New",
+      "art": {
+        "from": "#1db954",
+        "to": "#04160b",
+        "glyph": "♫"
       }
     },
     {

@@ -78,5 +78,19 @@ endpoint to JSON (`dist/api/**`), so the site needs no server. In that mode sear
 runs in the browser, the contact form opens the visitor's email app, and analytics are off.
 Preview it locally with `npm run build` and any static file server pointed at `dist/`.
 
+**Resume from Overleaf:** the deploy workflow can pull your resume straight from Overleaf
+(Git integration), compile it with tectonic, and publish it as the downloadable resume, on
+every push and once a day. To turn it on, add these repository secrets
+(Settings → Secrets and variables → Actions, or `gh secret set NAME`):
+
+| Secret | Value |
+| --- | --- |
+| `OVERLEAF_PROJECT_ID` | The id in the project URL: `overleaf.com/project/<id>` |
+| `OVERLEAF_TOKEN` | Overleaf → Account Settings → Git integration → generate token |
+| `OVERLEAF_MAIN_FILE` | Optional; the `.tex` file to compile (default `main.tex`) |
+
+Without the secrets, the committed `public/Krish_Bansal_Resume.pdf` is used.
+Run `scripts/overleaf-resume.sh` locally (with the same env vars) to test it.
+
 **Full backend:** any Node 22+ host works (Render, Railway, Fly.io, a VPS). Set `ADMIN_TOKEN`, run `npm start`.
 On hosts with ephemeral disks, mount a volume at `storage/` so messages persist.
