@@ -1,5 +1,6 @@
 import { api } from './api.js';
 import { avatar, h, icons, svg } from './dom.js';
+import { playTadum } from './sound.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -63,6 +64,7 @@ async function showPicker() {
           h('button', {
             class: 'profile-tile', type: 'button',
             onClick: () => {
+              playTadum();
               api.track('profile_select', p.id);
               location.hash = `#/browse/${p.id}`;
             },

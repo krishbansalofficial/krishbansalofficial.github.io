@@ -1,6 +1,7 @@
 # Krish Bansal: Netflix-style Portfolio
 
-A Netflix-inspired portfolio: "ta-dum" intro → **Who's watching?** → a personalized
+A Netflix-inspired portfolio: animated intro → **Who's watching?** (picking a profile plays an
+original "ta-dum" sting synthesized with the Web Audio API, no audio files) → a personalized
 home screen of education, experience, projects, and skills.
 
 **Live:** https://krishbansalofficial.github.io/
@@ -64,7 +65,7 @@ Messages and stats are stored as JSON in `storage/` (git-ignored), written atomi
 ```
 server/   app.js (routes, CSP, errors) · catalog.js (profiles, similarity, search)
           jsonStore.js (atomic JSON persistence) · rateLimit.js · index.js
-public/   index.html · styles.css · js/main.js (SPA) · js/api.js · js/dom.js
+public/   index.html · styles.css · js/main.js (SPA) · js/api.js · js/dom.js · js/sound.js
 data/     portfolio.json
 test/     api.test.js
 ```
