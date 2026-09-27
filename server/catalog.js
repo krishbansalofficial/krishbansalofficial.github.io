@@ -28,7 +28,10 @@ export function loadCatalog(file) {
     if (!profile) return null;
     return {
       owner: raw.owner,
-      profile: { id: profile.id, name: profile.name, color: profile.color, face: profile.face },
+      profile: {
+        id: profile.id, name: profile.name, color: profile.color, face: profile.face,
+        commentary: Boolean(profile.commentary), // show "Director's Commentary" in detail views
+      },
       others: listProfiles().filter((p) => p.id !== profile.id),
       hero: items.get(profile.hero),
       rows: profile.rows.map((row, index) => ({

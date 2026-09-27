@@ -92,7 +92,7 @@
       "name": "Krish",
       "color": "#e50914",
       "face": "grin",
-      "hero": "change-assurance",
+      "hero": "behind-the-scenes",
       "rows": [
         {
           "title": "Continue Watching for Krish",
@@ -105,7 +105,38 @@
           ]
         },
         {
-          "title": "Projects",
+          "title": "Segfaults & Deadlocks: A Systems Trilogy",
+          "items": [
+            "threadpool",
+            "minibash",
+            "malloc"
+          ]
+        },
+        {
+          "title": "Because Markets Are Just Data",
+          "items": [
+            "regime",
+            "dataism",
+            "keshav",
+            "real-estate"
+          ]
+        },
+        {
+          "title": "Hackathon Originals",
+          "items": [
+            "change-assurance",
+            "real-estate"
+          ]
+        },
+        {
+          "title": "Built for Myself",
+          "items": [
+            "job-search",
+            "portfolio"
+          ]
+        },
+        {
+          "title": "The Full Catalog",
           "section": "projects",
           "items": [
             "change-assurance",
@@ -122,25 +153,7 @@
           ]
         },
         {
-          "title": "Systems Programming in C",
-          "items": [
-            "threadpool",
-            "minibash",
-            "malloc"
-          ]
-        },
-        {
-          "title": "Because You Like ML & Quant",
-          "items": [
-            "regime",
-            "dataism",
-            "keshav",
-            "real-estate",
-            "streaming"
-          ]
-        },
-        {
-          "title": "Experience",
+          "title": "Day Jobs & Lab Hours",
           "section": "experience",
           "items": [
             "keshav",
@@ -151,14 +164,14 @@
           ]
         },
         {
-          "title": "Education",
+          "title": "Origin Story",
           "section": "education",
           "items": [
             "vt"
           ]
         },
         {
-          "title": "Throwbacks",
+          "title": "Where It Started",
           "items": [
             "vex",
             "inventory",
@@ -177,7 +190,8 @@
             "skills-tools"
           ]
         }
-      ]
+      ],
+      "commentary": true
     }
   ],
   "items": [
@@ -214,6 +228,39 @@
         "from": "#b20710",
         "to": "#1b0b0c",
         "glyph": "KB"
+      }
+    },
+    {
+      "id": "behind-the-scenes",
+      "type": "series",
+      "title": "Behind the Scenes",
+      "subtitle": "A Krish Bansal Documentary",
+      "period": "2023 – Present",
+      "year": 2026,
+      "match": 100,
+      "rating": "BTS",
+      "summary": "The director’s cut. I like building things close to the metal and close to the markets: thread pools, shells, and allocators in C on one side, regime detection and forecasting harnesses in Python on the other. Lately I’ve been building tools that keep AI coding agents accountable.",
+      "bullets": [
+        "Now building: Change Assurance Runtime, a supervisor that proves what an AI coding agent actually did (VT Hacks 14)",
+        "Now researching: CNN–Transformer models for high-frequency market data at the Dataism Lab",
+        "Just shipped: a RAG pipeline and a forecasting evaluation harness at Keshav Enterprises",
+        "Running every morning: a job-search pipeline on GitHub Actions that costs nothing to operate"
+      ],
+      "tags": [
+        "Systems",
+        "Machine Learning",
+        "Quant Research",
+        "AI Agents"
+      ],
+      "genres": [
+        "Documentary",
+        "Systems",
+        "Machine Learning"
+      ],
+      "art": {
+        "from": "#e50914",
+        "to": "#0b0b0b",
+        "glyph": "BTS"
       }
     },
     {
@@ -285,7 +332,11 @@
         "from": "#0f4c5c",
         "to": "#07161c",
         "glyph": "KE"
-      }
+      },
+      "commentary": [
+        "The most useful result here was a negative one. The evaluation harness rejected the fancier Prophet model on 7 of 8 product lines, because 24 months of history usually isn’t enough to beat a seasonal baseline.",
+        "The RAG replies are constrained to retrieved catalog data on purpose: a made-up price in a customer email is worse than no draft at all."
+      ]
     },
     {
       "id": "dataism",
@@ -444,7 +495,11 @@
         "from": "#e50914",
         "to": "#2a0003",
         "glyph": "CA"
-      }
+      },
+      "commentary": [
+        "The question behind this one: when an AI agent changes your machine, how do you prove what it actually did? Job Objects answer “which process,” the hash chain answers “in what order,” and the signed passport answers “on whose authority.”",
+        "Freezing the OpenAPI contract early is what let three different clients be built against it in parallel during a hackathon."
+      ]
     },
     {
       "id": "job-search",
@@ -485,7 +540,10 @@
         "from": "#0369a1",
         "to": "#020d18",
         "glyph": "JS"
-      }
+      },
+      "commentary": [
+        "Built to solve my own problem. Everything runs on free infrastructure, so it costs nothing to leave running every morning."
+      ]
     },
     {
       "id": "regime",
@@ -519,7 +577,11 @@
         "from": "#15803d",
         "to": "#03170a",
         "glyph": "HMM"
-      }
+      },
+      "commentary": [
+        "An HMM gives probabilities, not labels. Using filtered probabilities in the backtest keeps it honest, since each decision only sees data available at that moment.",
+        "Benchmarking against K-Means and plain momentum is what makes the result mean something beyond “it made money in a backtest.”"
+      ]
     },
     {
       "id": "real-estate",
@@ -673,7 +735,10 @@
         "from": "#000000",
         "to": "#3f0003",
         "glyph": "N"
-      }
+      },
+      "commentary": [
+        "Everything on this page comes from one JSON catalog. Each profile is just a different arrangement of the same titles, and this commentary only appears on the Krish profile."
+      ]
     },
     {
       "id": "threadpool",
@@ -708,7 +773,11 @@
         "from": "#be123c",
         "to": "#1c0409",
         "glyph": "∥"
-      }
+      },
+      "commentary": [
+        "The subtle part is the join. A worker that waits on a future nobody has started yet can deadlock the pool, so instead it “helps” and runs that task inline.",
+        "Moving from one global lock to per-worker deques is where the speedup shows up, and also where Helgrind earns its keep."
+      ]
     },
     {
       "id": "minibash",
@@ -742,7 +811,11 @@
         "from": "#166534",
         "to": "#020a05",
         "glyph": "$_"
-      }
+      },
+      "commentary": [
+        "Using posix_spawnp instead of fork + exec means every pipe and redirection has to be declared up front as a spawn file action, a stricter way to think about what a child process inherits.",
+        "Exit statuses are the details you only notice when a script behaves differently from real bash: the last pipeline stage wins, and a process killed by a signal reports 128 + the signal number."
+      ]
     },
     {
       "id": "malloc",
@@ -775,7 +848,11 @@
         "from": "#1d4ed8",
         "to": "#030817",
         "glyph": "0x"
-      }
+      },
+      "commentary": [
+        "Allocator design is a trade-off you can put a number on: the grading index weights space utilization 60% and throughput 40%, so every layout decision shows up in the score.",
+        "When one wrong offset can silently corrupt the heap, small static helpers and assertions are what keep the code debuggable."
+      ]
     },
     {
       "id": "streaming",
@@ -812,7 +889,10 @@
         "from": "#1db954",
         "to": "#04160b",
         "glyph": "♫"
-      }
+      },
+      "commentary": [
+        "The plan changed mid-project: the Spotify and YouTube APIs were too rate-limited and sparse for genre data, so we switched to scraping MusicBrainz and mapping its subgenres to main genres."
+      ]
     },
     {
       "id": "skills-languages",

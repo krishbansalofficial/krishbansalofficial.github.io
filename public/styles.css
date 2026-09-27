@@ -417,6 +417,16 @@ a { color: inherit; }
 .detail__bullets { margin: 0; padding-left: 1.1rem; line-height: 1.6; color: #e5e5e5; }
 .detail__bullets li { margin-bottom: 8px; }
 .detail__bullets li::marker { color: var(--red); }
+.commentary {
+  margin-top: 20px; padding: 14px 16px;
+  border-left: 3px solid var(--red); background: rgba(255,255,255,.04); border-radius: 0 4px 4px 0;
+}
+.commentary__label {
+  margin: 0 0 8px; font-size: .75rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--red);
+}
+.commentary p { margin: 0 0 8px; line-height: 1.6; color: #d8d8d8; font-style: italic; }
+.commentary p:last-child { margin-bottom: 0; }
 .detail__side { font-size: .88rem; line-height: 1.6; color: #ddd; }
 .detail__side p { margin: 0 0 12px; }
 .detail__side span.label { color: #777; }

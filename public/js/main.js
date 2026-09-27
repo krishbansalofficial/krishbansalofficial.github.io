@@ -352,7 +352,10 @@ async function openDetail(id) {
     h('p', { class: 'detail__summary' }, item.summary),
     isSkills
       ? h('ul', { class: 'chips' }, ...item.tags.map((t) => h('li', {}, t)))
-      : item.bullets?.length && h('ul', { class: 'detail__bullets' }, ...item.bullets.map((b) => h('li', {}, b))));
+      : item.bullets?.length && h('ul', { class: 'detail__bullets' }, ...item.bullets.map((b) => h('li', {}, b))),
+    state.page?.profile.commentary === true && item.commentary?.length > 0 && h('aside', { class: 'commentary' },
+      h('h3', { class: 'commentary__label' }, 'Director’s Commentary'),
+      ...item.commentary.map((note) => h('p', {}, note))));
 
   const side = h('div', { class: 'detail__side' },
     !isSkills && item.tags?.length && h('p', {}, h('span', { class: 'label' }, 'Stack: '), item.tags.join(', ')),

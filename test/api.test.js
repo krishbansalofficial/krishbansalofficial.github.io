@@ -40,7 +40,10 @@ describe('catalog API', () => {
     const recruiter = await (await get('/api/browse/recruiter')).json();
     const krish = await (await get('/api/browse/krish')).json();
     assert.equal(recruiter.hero.id, 'about-krish');
-    assert.equal(krish.hero.id, 'change-assurance');
+    assert.equal(krish.hero.id, 'behind-the-scenes');
+    // Director's commentary is a Krish-profile feature.
+    assert.equal(krish.profile.commentary, true);
+    assert.equal(recruiter.profile.commentary, false);
     const sections = (page) => page.rows.map((r) => r.section).filter(Boolean);
     for (const page of [recruiter, krish]) {
       for (const s of ['education', 'experience', 'projects', 'skills']) {
