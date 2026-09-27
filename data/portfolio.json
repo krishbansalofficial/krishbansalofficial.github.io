@@ -40,7 +40,8 @@
           "items": [
             "keshav",
             "dataism",
-            "uber"
+            "uber",
+            "unirely"
           ]
         },
         {
@@ -48,6 +49,14 @@
           "section": "education",
           "items": [
             "vt"
+          ]
+        },
+        {
+          "title": "VT Experiences",
+          "items": [
+            "ktp",
+            "bollywood-club",
+            "isa"
           ]
         },
         {
@@ -160,7 +169,8 @@
             "dataism",
             "housing",
             "opendsa",
-            "uber"
+            "uber",
+            "unirely"
           ]
         },
         {
@@ -168,6 +178,14 @@
           "section": "education",
           "items": [
             "vt"
+          ]
+        },
+        {
+          "title": "VT Experiences",
+          "items": [
+            "ktp",
+            "bollywood-club",
+            "isa"
           ]
         },
         {
@@ -457,6 +475,119 @@
         "from": "#5b3a29",
         "to": "#140c07",
         "glyph": "HS"
+      }
+    },
+    {
+      "id": "unirely",
+      "type": "experience",
+      "title": "UniRely",
+      "subtitle": "Essay Mentor · Remote",
+      "period": "Sep 2024 – Present",
+      "year": 2024,
+      "match": 86,
+      "rating": "MENTOR",
+      "summary": "Mentoring high school students through their undergraduate application essays.",
+      "bullets": [
+        "Guided high school students in crafting compelling essays for undergraduate applications and personalized mentorship, leveraging university-specific insights to enhance students’ applications and improve their chances of securing admissions"
+      ],
+      "tags": [
+        "Mentorship",
+        "Writing",
+        "College Admissions"
+      ],
+      "genres": [
+        "Mentorship"
+      ],
+      "badge": "Ongoing",
+      "art": {
+        "from": "#0e7490",
+        "to": "#03151a",
+        "glyph": "UR"
+      }
+    },
+    {
+      "id": "ktp",
+      "type": "experience",
+      "title": "Kappa Theta Pi",
+      "subtitle": "Founder Pledge Class · Virginia Tech",
+      "period": "Sep 2024 – Present",
+      "year": 2024,
+      "match": 88,
+      "rating": "FOUNDER",
+      "summary": "Founding pledge class of Virginia Tech’s chapter of Kappa Theta Pi, the professional technology fraternity.",
+      "bullets": [
+        "Engaged in a collaborative and diverse brotherhood committed to advancing technical expertise and fostering a passion for technology through professional development and networking events"
+      ],
+      "tags": [
+        "Professional Development",
+        "Networking",
+        "Community"
+      ],
+      "genres": [
+        "Leadership",
+        "Community"
+      ],
+      "badge": "Founder",
+      "art": {
+        "from": "#1e3a8a",
+        "to": "#070d1f",
+        "glyph": "KΘΠ"
+      }
+    },
+    {
+      "id": "bollywood-club",
+      "type": "experience",
+      "title": "VT Bollywood Club",
+      "subtitle": "Events Coordinator · Virginia Tech",
+      "period": "Aug 2023 – Apr 2024",
+      "year": 2023,
+      "match": 83,
+      "rating": "EVENTS",
+      "summary": "Ran marketing and social events for Virginia Tech’s Bollywood Club.",
+      "bullets": [
+        "Strategically developed and executed innovative marketing campaigns, significantly boosting event and club visibility and maximizing attendance while planning, coordinating, and executing dynamic social events for the club"
+      ],
+      "tags": [
+        "Marketing",
+        "Event Planning",
+        "Leadership"
+      ],
+      "genres": [
+        "Leadership",
+        "Community"
+      ],
+      "art": {
+        "from": "#c2410c",
+        "to": "#1f0a02",
+        "glyph": "BC"
+      }
+    },
+    {
+      "id": "isa",
+      "type": "experience",
+      "title": "VT Indian Students Association",
+      "subtitle": "Logistics Coordinator · Virginia Tech",
+      "period": "Aug 2023 – Nov 2023",
+      "year": 2023,
+      "match": 82,
+      "rating": "LOGISTICS",
+      "summary": "Handled logistics for the Indian Students Association’s cultural and social events.",
+      "bullets": [
+        "Managed logistics for the association, including venue coordination and on-site management, ensuring flawless execution of high-impact cultural and social events"
+      ],
+      "tags": [
+        "Logistics",
+        "Event Planning",
+        "Operations"
+      ],
+      "genres": [
+        "Leadership",
+        "Community"
+      ],
+      "art": {
+        "from": "#a16207",
+        "to": "#1a1002",
+        "glyph": "ISA"
       }
     },
     {
