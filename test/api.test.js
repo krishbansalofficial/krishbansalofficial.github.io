@@ -50,10 +50,10 @@ describe('catalog API', () => {
         assert.ok(sections(page).includes(s), `${page.profile.id} is missing ${s}`);
       }
     }
-    // Throwbacks are director's-cut only.
+    // "Where It Started" throwbacks are director's-cut only.
     const ids = (page) => page.rows.flatMap((r) => r.items.map((i) => i.id));
-    assert.ok(ids(krish).includes('opendsa'));
-    assert.ok(!ids(recruiter).includes('opendsa'));
+    assert.ok(ids(krish).includes('vex'));
+    assert.ok(!ids(recruiter).includes('vex'));
     assert.deepEqual(recruiter.others.map((p) => p.id), ['krish']);
   });
 
