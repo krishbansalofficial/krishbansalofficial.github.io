@@ -1,10 +1,23 @@
-// An original "ta-dum" login sting, synthesized with the Web Audio API (no
-// audio files). Browsers only allow audio after a user gesture, so call this
-// from a click handler, e.g. when a profile is picked. Passing an
-// OfflineAudioContext renders the sting without playing it (used for testing).
+// The "ta-dum" login sting. If public/audio/tadum.mp3 exists it is played;
+// otherwise an original sting is synthesized with the Web Audio API.
+// Browsers only allow audio after a user gesture, so call this from a click
+// handler, e.g. when a profile is picked. Passing an OfflineAudioContext
+// renders the synthesized sting without playing it (used for testing).
+const SAMPLE_URL = 'audio/tadum.mp3';
 let ctx;
+let sample = typeof Audio === 'function' ? Object.assign(new Audio(SAMPLE_URL), { preload: 'auto' }) : null;
 
 export function playTadum(target) {
+  if (target || !sample) return synthTadum(target);
+  sample.currentTime = 0;
+  sample.play().catch((err) => {
+    if (err.name === 'NotAllowedError') return; // blocked by autoplay policy: stay silent
+    sample = null; // file missing or undecodable: use the synth from now on
+    synthTadum();
+  });
+}
+
+function synthTadum(target) {
   let ac;
   try {
     ac = target ?? (ctx ??= new (window.AudioContext || window.webkitAudioContext)());

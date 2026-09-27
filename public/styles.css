@@ -154,6 +154,9 @@ a { color: inherit; }
   border: 1px solid rgba(255,255,255,.5); border-radius: 4px; padding: 5px 12px;
 }
 .nav__resume:hover { background: #fff; color: #000; }
+.nav__github { color: #e5e5e5; transition: color .2s; }
+.nav__github:hover { color: var(--muted); }
+.nav__github svg { fill: currentColor; stroke: none; }
 
 .search { display: flex; align-items: center; border: 1px solid transparent; transition: border-color .2s, background .2s; }
 .search__input {
