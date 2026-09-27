@@ -4,12 +4,17 @@
     "headline": "Computer Science @ Virginia Tech",
     "email": "krishbansal45@vt.edu",
     "links": [
-      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/krish-bansalofficial/" },
-      { "label": "GitHub", "url": "https://github.com/krishbansalofficial" }
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/krish-bansalofficial/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/krishbansalofficial"
+      }
     ],
     "resumeUrl": "Krish_Bansal_Resume.pdf"
   },
-
   "profiles": [
     {
       "id": "recruiter",
@@ -18,11 +23,67 @@
       "face": "smile",
       "hero": "about-krish",
       "rows": [
-        { "title": "Top 5 Highlights Today", "variant": "ranked", "items": ["keshav", "change-assurance", "dataism", "regime", "real-estate"] },
-        { "title": "Work Experience", "section": "experience", "items": ["keshav", "dataism", "uber"] },
-        { "title": "Education", "section": "education", "items": ["vt"] },
-        { "title": "Projects", "section": "projects", "items": ["change-assurance", "job-search", "regime", "real-estate", "playlist", "inventory"] },
-        { "title": "Technical Skills", "section": "skills", "items": ["skills-languages", "skills-frameworks", "skills-libraries", "skills-databases", "skills-tools"] }
+        {
+          "title": "Top 5 Highlights Today",
+          "variant": "ranked",
+          "items": [
+            "keshav",
+            "change-assurance",
+            "dataism",
+            "regime",
+            "real-estate"
+          ]
+        },
+        {
+          "title": "Work Experience",
+          "section": "experience",
+          "items": [
+            "keshav",
+            "dataism",
+            "uber"
+          ]
+        },
+        {
+          "title": "Education",
+          "section": "education",
+          "items": [
+            "vt"
+          ]
+        },
+        {
+          "title": "Projects",
+          "section": "projects",
+          "items": [
+            "change-assurance",
+            "job-search",
+            "threadpool",
+            "minibash",
+            "malloc",
+            "regime",
+            "real-estate",
+            "playlist",
+            "inventory"
+          ]
+        },
+        {
+          "title": "Systems Programming in C",
+          "items": [
+            "threadpool",
+            "minibash",
+            "malloc"
+          ]
+        },
+        {
+          "title": "Technical Skills",
+          "section": "skills",
+          "items": [
+            "skills-languages",
+            "skills-frameworks",
+            "skills-libraries",
+            "skills-databases",
+            "skills-tools"
+          ]
+        }
       ]
     },
     {
@@ -32,17 +93,90 @@
       "face": "grin",
       "hero": "change-assurance",
       "rows": [
-        { "title": "Continue Watching for Krish", "variant": "progress", "items": ["change-assurance", "job-search", "dataism", "portfolio"] },
-        { "title": "Projects", "section": "projects", "items": ["change-assurance", "job-search", "regime", "real-estate", "playlist", "inventory", "portfolio"] },
-        { "title": "Because You Like ML & Quant", "items": ["regime", "dataism", "keshav", "real-estate"] },
-        { "title": "Experience", "section": "experience", "items": ["keshav", "dataism", "housing", "opendsa", "uber"] },
-        { "title": "Education", "section": "education", "items": ["vt"] },
-        { "title": "Throwbacks", "items": ["vex", "inventory", "playlist", "uber"] },
-        { "title": "The Toolbox", "section": "skills", "items": ["skills-languages", "skills-frameworks", "skills-libraries", "skills-databases", "skills-tools"] }
+        {
+          "title": "Continue Watching for Krish",
+          "variant": "progress",
+          "items": [
+            "change-assurance",
+            "job-search",
+            "dataism",
+            "portfolio"
+          ]
+        },
+        {
+          "title": "Projects",
+          "section": "projects",
+          "items": [
+            "change-assurance",
+            "job-search",
+            "threadpool",
+            "minibash",
+            "malloc",
+            "regime",
+            "real-estate",
+            "playlist",
+            "inventory",
+            "portfolio"
+          ]
+        },
+        {
+          "title": "Systems Programming in C",
+          "items": [
+            "threadpool",
+            "minibash",
+            "malloc"
+          ]
+        },
+        {
+          "title": "Because You Like ML & Quant",
+          "items": [
+            "regime",
+            "dataism",
+            "keshav",
+            "real-estate"
+          ]
+        },
+        {
+          "title": "Experience",
+          "section": "experience",
+          "items": [
+            "keshav",
+            "dataism",
+            "housing",
+            "opendsa",
+            "uber"
+          ]
+        },
+        {
+          "title": "Education",
+          "section": "education",
+          "items": [
+            "vt"
+          ]
+        },
+        {
+          "title": "Throwbacks",
+          "items": [
+            "vex",
+            "inventory",
+            "playlist",
+            "uber"
+          ]
+        },
+        {
+          "title": "The Toolbox",
+          "section": "skills",
+          "items": [
+            "skills-languages",
+            "skills-frameworks",
+            "skills-libraries",
+            "skills-databases",
+            "skills-tools"
+          ]
+        }
       ]
     }
   ],
-
   "items": [
     {
       "id": "about-krish",
@@ -60,11 +194,25 @@
         "Undergraduate Research Assistant, Dataism Laboratory for Quantitative Finance",
         "Intern at Keshav Enterprises (ML + data engineering) and Uber (product)"
       ],
-      "tags": ["Python", "Machine Learning", "FastAPI", "PostgreSQL", "React", "Quant Research"],
-      "genres": ["Machine Learning", "Backend", "Data Engineering"],
-      "art": { "from": "#b20710", "to": "#1b0b0c", "glyph": "KB" }
+      "tags": [
+        "Python",
+        "Machine Learning",
+        "FastAPI",
+        "PostgreSQL",
+        "React",
+        "Quant Research"
+      ],
+      "genres": [
+        "Machine Learning",
+        "Backend",
+        "Data Engineering"
+      ],
+      "art": {
+        "from": "#b20710",
+        "to": "#1b0b0c",
+        "glyph": "KB"
+      }
     },
-
     {
       "id": "vt",
       "type": "education",
@@ -81,12 +229,22 @@
         "Dean's List with Distinction: Spring 2025, Fall 2025",
         "Dean's List: Fall 2023, Fall 2024, Spring 2026"
       ],
-      "tags": ["Computer Science", "Data Structures", "Algorithms", "Software Engineering"],
-      "genres": ["Education"],
+      "tags": [
+        "Computer Science",
+        "Data Structures",
+        "Algorithms",
+        "Software Engineering"
+      ],
+      "genres": [
+        "Education"
+      ],
       "badge": "Dean's List",
-      "art": { "from": "#861f41", "to": "#e5751f", "glyph": "VT" }
+      "art": {
+        "from": "#861f41",
+        "to": "#e5751f",
+        "glyph": "VT"
+      }
     },
-
     {
       "id": "keshav",
       "type": "experience",
@@ -103,10 +261,28 @@
         "Designed and ran an ML evaluation harness benchmarking Prophet time-series forecasts against a naive seasonal baseline across 8 product lines, using MLflow to gate model deployment — correctly rejected the more complex model in 7/8 cases due to limited (24-month) history",
         "Achieved a 49% relative MAPE reduction (52.0% → 26.6%) with Prophet on the one product line where sufficient trend signal existed, validating that the harness caught a genuine case for deployment"
       ],
-      "tags": ["Python", "PostgreSQL", "FastAPI", "Docker", "MLflow", "ChromaDB", "Claude API", "Prophet", "RAG"],
-      "genres": ["Machine Learning", "Data Engineering", "LLMs"],
+      "tags": [
+        "Python",
+        "PostgreSQL",
+        "FastAPI",
+        "Docker",
+        "MLflow",
+        "ChromaDB",
+        "Claude API",
+        "Prophet",
+        "RAG"
+      ],
+      "genres": [
+        "Machine Learning",
+        "Data Engineering",
+        "LLMs"
+      ],
       "badge": "New",
-      "art": { "from": "#0f4c5c", "to": "#07161c", "glyph": "KE" }
+      "art": {
+        "from": "#0f4c5c",
+        "to": "#07161c",
+        "glyph": "KE"
+      }
     },
     {
       "id": "dataism",
@@ -121,10 +297,25 @@
       "bullets": [
         "Built a CNN–Transformer hybrid model for high-frequency market data, using convolutional filters to extract short-horizon trading signals and transformer attention to model long-range temporal dependencies for price direction forecasting, using Python and R"
       ],
-      "tags": ["Python", "R", "PyTorch", "CNN", "Transformers", "Time Series"],
-      "genres": ["Research", "Quant", "Deep Learning"],
+      "tags": [
+        "Python",
+        "R",
+        "PyTorch",
+        "CNN",
+        "Transformers",
+        "Time Series"
+      ],
+      "genres": [
+        "Research",
+        "Quant",
+        "Deep Learning"
+      ],
       "badge": "Ongoing",
-      "art": { "from": "#3a0ca3", "to": "#0b0420", "glyph": "Δ" }
+      "art": {
+        "from": "#3a0ca3",
+        "to": "#0b0420",
+        "glyph": "Δ"
+      }
     },
     {
       "id": "uber",
@@ -141,9 +332,21 @@
         "Designed high-fidelity UI/UX mockups, optimizing user flows and interaction design",
         "Presented product strategy insights to Uber stakeholders and industry mentors"
       ],
-      "tags": ["Market Analysis", "UI/UX", "Figma", "Product Strategy"],
-      "genres": ["Product", "Design"],
-      "art": { "from": "#1f1f1f", "to": "#000000", "glyph": "U" }
+      "tags": [
+        "Market Analysis",
+        "UI/UX",
+        "Figma",
+        "Product Strategy"
+      ],
+      "genres": [
+        "Product",
+        "Design"
+      ],
+      "art": {
+        "from": "#1f1f1f",
+        "to": "#000000",
+        "glyph": "U"
+      }
     },
     {
       "id": "opendsa",
@@ -159,9 +362,21 @@
         "Enhanced the OpenDSA instructor interface for better usability and integration with Canvas",
         "Contributed to the optimization of a key NSF-sponsored educational technology used across universities, working in Ruby on Rails"
       ],
-      "tags": ["Ruby", "Ruby on Rails", "Canvas", "EdTech"],
-      "genres": ["Research", "Web"],
-      "art": { "from": "#14532d", "to": "#04140b", "glyph": "DSA" }
+      "tags": [
+        "Ruby",
+        "Ruby on Rails",
+        "Canvas",
+        "EdTech"
+      ],
+      "genres": [
+        "Research",
+        "Web"
+      ],
+      "art": {
+        "from": "#14532d",
+        "to": "#04140b",
+        "glyph": "DSA"
+      }
     },
     {
       "id": "housing",
@@ -176,11 +391,20 @@
       "bullets": [
         "Led summer housing operations supporting 2,000+ students, managing guest services, coordinating large-scale logistics, and handling after-hours issues, improving overall efficiency by 17%"
       ],
-      "tags": ["Operations", "Leadership", "Logistics"],
-      "genres": ["Leadership"],
-      "art": { "from": "#5b3a29", "to": "#140c07", "glyph": "HS" }
+      "tags": [
+        "Operations",
+        "Leadership",
+        "Logistics"
+      ],
+      "genres": [
+        "Leadership"
+      ],
+      "art": {
+        "from": "#5b3a29",
+        "to": "#140c07",
+        "glyph": "HS"
+      }
     },
-
     {
       "id": "change-assurance",
       "type": "project",
@@ -197,10 +421,27 @@
         "Shipped three clients (Textual TUI, CLI, Electron/React desktop) against one frozen OpenAPI contract of 66 operations, 61 routes, and 110 typed schemas",
         "Validated by a threat-model review (15 of 16 findings fixed) and 1,022 passing tests"
       ],
-      "tags": ["Python", "FastAPI", "Textual", "Electron", "React", "SQLite", "Ed25519", "Security"],
-      "genres": ["Security", "AI Agents", "Systems"],
+      "tags": [
+        "Python",
+        "FastAPI",
+        "Textual",
+        "Electron",
+        "React",
+        "SQLite",
+        "Ed25519",
+        "Security"
+      ],
+      "genres": [
+        "Security",
+        "AI Agents",
+        "Systems"
+      ],
       "badge": "New",
-      "art": { "from": "#e50914", "to": "#2a0003", "glyph": "CA" }
+      "art": {
+        "from": "#e50914",
+        "to": "#2a0003",
+        "glyph": "CA"
+      }
     },
     {
       "id": "job-search",
@@ -218,10 +459,30 @@
         "Compiles a tailored LaTeX resume PDF, logs every posting to Google Sheets with an Eligibility column, and emails a morning summary",
         "Backed by a test suite covering discovery quality, queueing, pipeline limits, and workflows"
       ],
-      "tags": ["Python", "GitHub Actions", "Gemini API", "Google Sheets API", "LaTeX", "Automation"],
-      "genres": ["Automation", "LLMs", "Data Engineering"],
-      "links": [{ "label": "View Code", "url": "https://github.com/krishbansalofficial/job-search-automation" }],
-      "art": { "from": "#0369a1", "to": "#020d18", "glyph": "JS" }
+      "tags": [
+        "Python",
+        "GitHub Actions",
+        "Gemini API",
+        "Google Sheets API",
+        "LaTeX",
+        "Automation"
+      ],
+      "genres": [
+        "Automation",
+        "LLMs",
+        "Data Engineering"
+      ],
+      "links": [
+        {
+          "label": "View Code",
+          "url": "https://github.com/krishbansalofficial/job-search-automation"
+        }
+      ],
+      "art": {
+        "from": "#0369a1",
+        "to": "#020d18",
+        "glyph": "JS"
+      }
     },
     {
       "id": "regime",
@@ -238,10 +499,24 @@
         "Developed a transaction-cost-aware backtesting framework with filtered probability inference, benchmarked against K-Means and momentum strategies",
         "Achieved a 57.97% return with ~34% lower volatility than Buy-and-Hold"
       ],
-      "tags": ["Python", "pandas", "NumPy", "hmmlearn", "scikit-learn", "Backtesting"],
-      "genres": ["Quant", "Machine Learning"],
+      "tags": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "hmmlearn",
+        "scikit-learn",
+        "Backtesting"
+      ],
+      "genres": [
+        "Quant",
+        "Machine Learning"
+      ],
       "badge": "57.97% Return",
-      "art": { "from": "#15803d", "to": "#03170a", "glyph": "HMM" }
+      "art": {
+        "from": "#15803d",
+        "to": "#03170a",
+        "glyph": "HMM"
+      }
     },
     {
       "id": "real-estate",
@@ -258,10 +533,23 @@
         "Reduced MAE to $87.9K and RMSE to $181.8K via hyperparameter tuning and feature engineering in Azure ML Studio",
         "Delivered a full-stack web prototype integrating the model with React.js, Node.js, and PostgreSQL for scalable price analysis"
       ],
-      "tags": ["React", "Node.js", "PostgreSQL", "Azure ML Studio", "Boosted Trees"],
-      "genres": ["Machine Learning", "Full-Stack"],
+      "tags": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Azure ML Studio",
+        "Boosted Trees"
+      ],
+      "genres": [
+        "Machine Learning",
+        "Full-Stack"
+      ],
       "badge": "R² 0.975",
-      "art": { "from": "#b45309", "to": "#1c0d02", "glyph": "RE" }
+      "art": {
+        "from": "#b45309",
+        "to": "#1c0d02",
+        "glyph": "RE"
+      }
     },
     {
       "id": "playlist",
@@ -277,9 +565,20 @@
         "Engineered a personalized playlist recommendation system in Java using hybrid filtering, processing 10K+ songs and 1K+ user preference profiles to generate ranked recommendations",
         "Improved recommendation relevance by 35% through dynamic weighting and similarity scoring, reducing average selection time and increasing engagement"
       ],
-      "tags": ["Java", "SQL", "Recommender Systems"],
-      "genres": ["Recommenders", "Backend"],
-      "art": { "from": "#9d174d", "to": "#1a0310", "glyph": "♪" }
+      "tags": [
+        "Java",
+        "SQL",
+        "Recommender Systems"
+      ],
+      "genres": [
+        "Recommenders",
+        "Backend"
+      ],
+      "art": {
+        "from": "#9d174d",
+        "to": "#1a0310",
+        "glyph": "♪"
+      }
     },
     {
       "id": "inventory",
@@ -296,9 +595,21 @@
         "Designed normalized database schemas and a modular OOP architecture, optimizing query performance and ensuring data integrity",
         "Documented system design and scalability in a detailed Technical Design Document (TDD)"
       ],
-      "tags": ["Java", "SQL", "OOP", "Database Design"],
-      "genres": ["Backend", "Databases"],
-      "art": { "from": "#475569", "to": "#0b0f14", "glyph": "INV" }
+      "tags": [
+        "Java",
+        "SQL",
+        "OOP",
+        "Database Design"
+      ],
+      "genres": [
+        "Backend",
+        "Databases"
+      ],
+      "art": {
+        "from": "#475569",
+        "to": "#0b0f14",
+        "glyph": "INV"
+      }
     },
     {
       "id": "vex",
@@ -314,9 +625,21 @@
         "Engineered autonomous and driver-controlled robotics systems in C++ for VEX U competitions",
         "Collaborated with a multidisciplinary team to implement algorithms and tune sensor-driven precision"
       ],
-      "tags": ["C++", "PROS", "Git", "Robotics"],
-      "genres": ["Robotics", "Embedded"],
-      "art": { "from": "#7c2d12", "to": "#140502", "glyph": "VEX" }
+      "tags": [
+        "C++",
+        "PROS",
+        "Git",
+        "Robotics"
+      ],
+      "genres": [
+        "Robotics",
+        "Embedded"
+      ],
+      "art": {
+        "from": "#7c2d12",
+        "to": "#140502",
+        "glyph": "VEX"
+      }
     },
     {
       "id": "portfolio",
@@ -333,21 +656,151 @@
         "Tag-overlap similarity powers the \"More Like This\" shelf in every detail view",
         "Contact messages persist server-side with validation, a honeypot, and per-IP rate limiting"
       ],
-      "tags": ["Node.js", "Express", "JavaScript", "CSS"],
-      "genres": ["Full-Stack", "Web"],
-      "art": { "from": "#000000", "to": "#3f0003", "glyph": "N" }
+      "tags": [
+        "Node.js",
+        "Express",
+        "JavaScript",
+        "CSS"
+      ],
+      "genres": [
+        "Full-Stack",
+        "Web"
+      ],
+      "art": {
+        "from": "#000000",
+        "to": "#3f0003",
+        "glyph": "N"
+      }
     },
-
+    {
+      "id": "threadpool",
+      "type": "project",
+      "title": "Fork-Join Thread Pool",
+      "subtitle": "Work-stealing task parallelism in C · CS 3214",
+      "period": "Spring 2026",
+      "year": 2026,
+      "match": 98,
+      "rating": "SYSTEMS",
+      "summary": "A fork/join framework for parallel divide-and-conquer algorithms, built up in stages from a single-lock work-sharing pool to a work-stealing pool with per-worker deques. Built with a partner.",
+      "bullets": [
+        "Implemented a thread pool and futures API (submit, future_get, shutdown) in C with pthreads, evolving it from a single-lock work-sharing queue to per-worker deques with work stealing",
+        "Prevented deadlock with helping: a worker that joins a not-yet-started task executes it inline, while external threads wait instead of helping",
+        "Replaced the global lock with finer-grained per-worker locking, keeping each task's state change atomic with its removal from a queue so exactly one thread runs it",
+        "Kept idle workers blocked on condition variables (no busy-waiting), checked for data races with Helgrind, and benchmarked parallel speedup on 32-core Xeon machines"
+      ],
+      "tags": [
+        "C",
+        "pthreads",
+        "Concurrency",
+        "Work Stealing",
+        "Helgrind",
+        "Git"
+      ],
+      "genres": [
+        "Systems",
+        "Concurrency"
+      ],
+      "badge": "New",
+      "art": {
+        "from": "#be123c",
+        "to": "#1c0409",
+        "glyph": "∥"
+      }
+    },
+    {
+      "id": "minibash",
+      "type": "project",
+      "title": "Minibash",
+      "subtitle": "A bash-subset shell in C · CS 3214",
+      "period": "Spring 2026",
+      "year": 2026,
+      "match": 97,
+      "rating": "SYSTEMS",
+      "summary": "A command-language interpreter implementing a subset of bash: pipelines, redirection, variables, command substitution, and control flow, with every job running in its own process group. Built with a partner.",
+      "bullets": [
+        "Built a shell in C that parses scripts with the Tree-sitter bash grammar and runs simple commands, pipelines, && / || lists, if/elif/else, and for/while loops with break",
+        "Launched processes with posix_spawnp instead of fork + exec, wiring pipes and file redirection (including |& and >&) through spawn file actions and giving each job its own process group",
+        "Implemented quoting, variable expansion ($?, $$, ${var}), and $(…) command substitution, matching bash's exit-status rules (last pipeline stage; 128 + signal number)",
+        "Tracked child processes via SIGCHLD and waitpid, and verified memory safety under Valgrind"
+      ],
+      "tags": [
+        "C",
+        "POSIX",
+        "posix_spawn",
+        "Tree-sitter",
+        "Valgrind",
+        "Git"
+      ],
+      "genres": [
+        "Systems",
+        "Operating Systems"
+      ],
+      "art": {
+        "from": "#166534",
+        "to": "#020a05",
+        "glyph": "$_"
+      }
+    },
+    {
+      "id": "malloc",
+      "type": "project",
+      "title": "Malloc Lab",
+      "subtitle": "A 64-bit dynamic memory allocator in C · CS 3214",
+      "period": "Spring 2026",
+      "year": 2026,
+      "match": 96,
+      "rating": "SYSTEMS",
+      "summary": "My own malloc, free, and realloc: a 64-bit allocator tuned to balance space utilization against throughput on trace-driven benchmarks. Built with a partner.",
+      "bullets": [
+        "Implemented mm_malloc, mm_free, and mm_realloc returning 16-byte-aligned blocks, going beyond the implicit-free-list baseline the assignment disallowed as a final design",
+        "Designed the heap block layout and free-block organization, with splitting and coalescing to limit fragmentation",
+        "Tuned against a performance index weighting space utilization (60%) and throughput (40%) using the course's trace-driven driver",
+        "Encapsulated pointer arithmetic in static helper functions and guarded invariants with assertions to keep untyped memory code debuggable"
+      ],
+      "tags": [
+        "C",
+        "Memory Management",
+        "Data Structures",
+        "gdb",
+        "perf"
+      ],
+      "genres": [
+        "Systems",
+        "Operating Systems"
+      ],
+      "art": {
+        "from": "#1d4ed8",
+        "to": "#030817",
+        "glyph": "0x"
+      }
+    },
     {
       "id": "skills-languages",
       "type": "skills",
       "title": "Languages",
       "subtitle": "10 titles",
       "summary": "Programming languages I work in.",
-      "tags": ["Java", "Python", "Swift", "C", "C++", "JavaScript", "TypeScript", "SQL", "R", "Ruby"],
-      "genres": ["Skills"],
+      "tags": [
+        "Java",
+        "Python",
+        "Swift",
+        "C",
+        "C++",
+        "JavaScript",
+        "TypeScript",
+        "SQL",
+        "R",
+        "Ruby"
+      ],
+      "genres": [
+        "Skills"
+      ],
       "match": 98,
-      "art": { "from": "#1e3a8a", "to": "#050a1a", "glyph": "{ }" }
+      "art": {
+        "from": "#1e3a8a",
+        "to": "#050a1a",
+        "glyph": "{ }"
+      }
     },
     {
       "id": "skills-frameworks",
@@ -355,10 +808,26 @@
       "title": "Frameworks",
       "subtitle": "9 titles",
       "summary": "Web, desktop, and ML frameworks.",
-      "tags": ["FastAPI", "React.js", "Next.js", "Node.js", "Ruby on Rails", "Electron", "scikit-learn", "spaCy", "Bootstrap"],
-      "genres": ["Skills"],
+      "tags": [
+        "FastAPI",
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Ruby on Rails",
+        "Electron",
+        "scikit-learn",
+        "spaCy",
+        "Bootstrap"
+      ],
+      "genres": [
+        "Skills"
+      ],
       "match": 97,
-      "art": { "from": "#6d28d9", "to": "#12051f", "glyph": "</>" }
+      "art": {
+        "from": "#6d28d9",
+        "to": "#12051f",
+        "glyph": "</>"
+      }
     },
     {
       "id": "skills-libraries",
@@ -366,10 +835,25 @@
       "title": "Libraries",
       "subtitle": "8 titles",
       "summary": "Data, ML, and validation libraries.",
-      "tags": ["Pydantic", "pandas", "NumPy", "Matplotlib", "TensorFlow", "PyTorch", "Prophet", "hmmlearn"],
-      "genres": ["Skills"],
+      "tags": [
+        "Pydantic",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "TensorFlow",
+        "PyTorch",
+        "Prophet",
+        "hmmlearn"
+      ],
+      "genres": [
+        "Skills"
+      ],
       "match": 97,
-      "art": { "from": "#0e7490", "to": "#021317", "glyph": "λ" }
+      "art": {
+        "from": "#0e7490",
+        "to": "#021317",
+        "glyph": "λ"
+      }
     },
     {
       "id": "skills-databases",
@@ -377,10 +861,21 @@
       "title": "Databases",
       "subtitle": "4 titles",
       "summary": "Relational and vector stores.",
-      "tags": ["PostgreSQL", "SQLite", "ChromaDB", "SQL"],
-      "genres": ["Skills"],
+      "tags": [
+        "PostgreSQL",
+        "SQLite",
+        "ChromaDB",
+        "SQL"
+      ],
+      "genres": [
+        "Skills"
+      ],
       "match": 96,
-      "art": { "from": "#047857", "to": "#021a12", "glyph": "DB" }
+      "art": {
+        "from": "#047857",
+        "to": "#021a12",
+        "glyph": "DB"
+      }
     },
     {
       "id": "skills-tools",
@@ -388,10 +883,23 @@
       "title": "Developer Tools",
       "subtitle": "6 titles",
       "summary": "Infrastructure, MLOps, and design tools.",
-      "tags": ["Git", "Docker", "MLflow", "Azure ML Studio", "Google Cloud Platform", "Figma"],
-      "genres": ["Skills"],
+      "tags": [
+        "Git",
+        "Docker",
+        "MLflow",
+        "Azure ML Studio",
+        "Google Cloud Platform",
+        "Figma"
+      ],
+      "genres": [
+        "Skills"
+      ],
       "match": 95,
-      "art": { "from": "#a16207", "to": "#1a1002", "glyph": "⚙" }
+      "art": {
+        "from": "#a16207",
+        "to": "#1a1002",
+        "glyph": "⚙"
+      }
     }
   ]
 }
