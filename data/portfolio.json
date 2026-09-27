@@ -1,0 +1,397 @@
+{
+  "owner": {
+    "name": "Krish Bansal",
+    "headline": "Computer Science @ Virginia Tech",
+    "email": "krishbansal45@vt.edu",
+    "links": [
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/krish-bansalofficial/" },
+      { "label": "GitHub", "url": "https://github.com/krishbansalofficial" }
+    ],
+    "resumeUrl": "Krish_Bansal_Resume.pdf"
+  },
+
+  "profiles": [
+    {
+      "id": "recruiter",
+      "name": "Recruiter",
+      "color": "#2f7bf5",
+      "face": "smile",
+      "hero": "about-krish",
+      "rows": [
+        { "title": "Top 5 Highlights Today", "variant": "ranked", "items": ["keshav", "change-assurance", "dataism", "regime", "real-estate"] },
+        { "title": "Work Experience", "section": "experience", "items": ["keshav", "dataism", "uber"] },
+        { "title": "Education", "section": "education", "items": ["vt"] },
+        { "title": "Projects", "section": "projects", "items": ["change-assurance", "job-search", "regime", "real-estate", "playlist", "inventory"] },
+        { "title": "Technical Skills", "section": "skills", "items": ["skills-languages", "skills-frameworks", "skills-libraries", "skills-databases", "skills-tools"] }
+      ]
+    },
+    {
+      "id": "krish",
+      "name": "Krish",
+      "color": "#e50914",
+      "face": "grin",
+      "hero": "change-assurance",
+      "rows": [
+        { "title": "Continue Watching for Krish", "variant": "progress", "items": ["change-assurance", "job-search", "dataism", "portfolio"] },
+        { "title": "Projects", "section": "projects", "items": ["change-assurance", "job-search", "regime", "real-estate", "playlist", "inventory", "portfolio"] },
+        { "title": "Because You Like ML & Quant", "items": ["regime", "dataism", "keshav", "real-estate"] },
+        { "title": "Experience", "section": "experience", "items": ["keshav", "dataism", "housing", "opendsa", "uber"] },
+        { "title": "Education", "section": "education", "items": ["vt"] },
+        { "title": "Throwbacks", "items": ["vex", "inventory", "playlist", "uber"] },
+        { "title": "The Toolbox", "section": "skills", "items": ["skills-languages", "skills-frameworks", "skills-libraries", "skills-databases", "skills-tools"] }
+      ]
+    }
+  ],
+
+  "items": [
+    {
+      "id": "about-krish",
+      "type": "series",
+      "title": "Krish Bansal",
+      "subtitle": "A Computer Science Original",
+      "period": "2023 – Present",
+      "year": 2026,
+      "match": 99,
+      "rating": "TV-CS",
+      "summary": "Virginia Tech computer science student building ML systems, data pipelines, and backend services. Recently shipped a RAG pipeline and forecasting evaluation harness at Keshav Enterprises, researches deep-learning models for high-frequency markets, and builds tools for supervising AI coding agents.",
+      "bullets": [
+        "B.S. Computer Science, Virginia Tech (GPA 3.62 / 4.0, in-major 3.68)",
+        "Dean's List five semesters, twice with Distinction",
+        "Undergraduate Research Assistant, Dataism Laboratory for Quantitative Finance",
+        "Intern at Keshav Enterprises (ML + data engineering) and Uber (product)"
+      ],
+      "tags": ["Python", "Machine Learning", "FastAPI", "PostgreSQL", "React", "Quant Research"],
+      "genres": ["Machine Learning", "Backend", "Data Engineering"],
+      "art": { "from": "#b20710", "to": "#1b0b0c", "glyph": "KB" }
+    },
+
+    {
+      "id": "vt",
+      "type": "education",
+      "title": "Virginia Tech",
+      "subtitle": "B.S. Computer Science · Blacksburg, VA",
+      "period": "Fall 2023 – Present",
+      "year": 2023,
+      "match": 98,
+      "rating": "B.S.",
+      "summary": "Bachelor of Science in Computer Science at Virginia Tech with a cumulative GPA of 3.62 and an in-major GPA of 3.68.",
+      "bullets": [
+        "Cumulative GPA: 3.62 / 4.0",
+        "In-Major GPA: 3.68 / 4.0",
+        "Dean's List with Distinction: Spring 2025, Fall 2025",
+        "Dean's List: Fall 2023, Fall 2024, Spring 2026"
+      ],
+      "tags": ["Computer Science", "Data Structures", "Algorithms", "Software Engineering"],
+      "genres": ["Education"],
+      "badge": "Dean's List",
+      "art": { "from": "#861f41", "to": "#e5751f", "glyph": "VT" }
+    },
+
+    {
+      "id": "keshav",
+      "type": "experience",
+      "title": "Keshav Enterprises",
+      "subtitle": "Intern · India",
+      "period": "May 2026 – Aug 2026",
+      "year": 2026,
+      "match": 97,
+      "rating": "INTERN",
+      "summary": "Built the data and ML backbone for an SME manufacturer: an ELT pipeline replacing spreadsheet tracking, a RAG system for grounded customer replies, and an evaluation harness that decided which forecasting models were allowed to ship.",
+      "bullets": [
+        "Architected an end-to-end ELT pipeline in Python and PostgreSQL, normalizing sales inquiry and order data across 4 relational entities to replace manual spreadsheet tracking for an SME manufacturer",
+        "Built a Retrieval-Augmented Generation (RAG) pipeline using ChromaDB vector search and the Claude API to auto-draft grounded customer replies, constraining outputs to retrieved catalog data to eliminate hallucinated pricing",
+        "Designed and ran an ML evaluation harness benchmarking Prophet time-series forecasts against a naive seasonal baseline across 8 product lines, using MLflow to gate model deployment — correctly rejected the more complex model in 7/8 cases due to limited (24-month) history",
+        "Achieved a 49% relative MAPE reduction (52.0% → 26.6%) with Prophet on the one product line where sufficient trend signal existed, validating that the harness caught a genuine case for deployment"
+      ],
+      "tags": ["Python", "PostgreSQL", "FastAPI", "Docker", "MLflow", "ChromaDB", "Claude API", "Prophet", "RAG"],
+      "genres": ["Machine Learning", "Data Engineering", "LLMs"],
+      "badge": "New",
+      "art": { "from": "#0f4c5c", "to": "#07161c", "glyph": "KE" }
+    },
+    {
+      "id": "dataism",
+      "type": "experience",
+      "title": "Dataism Lab",
+      "subtitle": "Undergraduate Research Assistant · Quantitative Finance",
+      "period": "Nov 2025 – Present",
+      "year": 2025,
+      "match": 96,
+      "rating": "RESEARCH",
+      "summary": "Research at the Dataism Laboratory for Quantitative Finance on deep-learning models for high-frequency market data.",
+      "bullets": [
+        "Built a CNN–Transformer hybrid model for high-frequency market data, using convolutional filters to extract short-horizon trading signals and transformer attention to model long-range temporal dependencies for price direction forecasting, using Python and R"
+      ],
+      "tags": ["Python", "R", "PyTorch", "CNN", "Transformers", "Time Series"],
+      "genres": ["Research", "Quant", "Deep Learning"],
+      "badge": "Ongoing",
+      "art": { "from": "#3a0ca3", "to": "#0b0420", "glyph": "Δ" }
+    },
+    {
+      "id": "uber",
+      "type": "experience",
+      "title": "Uber",
+      "subtitle": "Intern · Remote",
+      "period": "Oct 2022 – Dec 2022",
+      "year": 2022,
+      "match": 91,
+      "rating": "INTERN",
+      "summary": "Product and design internship exploring an \"Uber-Teens\" prototype.",
+      "bullets": [
+        "Performed data-driven market analysis and competitive benchmarking to identify user segments and feature opportunities for the \"Uber-Teens\" prototype",
+        "Designed high-fidelity UI/UX mockups, optimizing user flows and interaction design",
+        "Presented product strategy insights to Uber stakeholders and industry mentors"
+      ],
+      "tags": ["Market Analysis", "UI/UX", "Figma", "Product Strategy"],
+      "genres": ["Product", "Design"],
+      "art": { "from": "#1f1f1f", "to": "#000000", "glyph": "U" }
+    },
+    {
+      "id": "opendsa",
+      "type": "experience",
+      "title": "OpenDSA",
+      "subtitle": "Research Assistant · Dept. of CS, Virginia Tech",
+      "period": "Jan 2025 – Apr 2025",
+      "year": 2025,
+      "match": 90,
+      "rating": "RESEARCH",
+      "summary": "Worked with Dr. Cliff Shaffer's team on OpenDSA, an NSF-sponsored educational platform used across universities.",
+      "bullets": [
+        "Enhanced the OpenDSA instructor interface for better usability and integration with Canvas",
+        "Contributed to the optimization of a key NSF-sponsored educational technology used across universities, working in Ruby on Rails"
+      ],
+      "tags": ["Ruby", "Ruby on Rails", "Canvas", "EdTech"],
+      "genres": ["Research", "Web"],
+      "art": { "from": "#14532d", "to": "#04140b", "glyph": "DSA" }
+    },
+    {
+      "id": "housing",
+      "type": "experience",
+      "title": "VT Housing Services",
+      "subtitle": "Summer Operations Assistant · Blacksburg, VA",
+      "period": "May 2025 – Aug 2025",
+      "year": 2025,
+      "match": 84,
+      "rating": "OPS",
+      "summary": "Ran summer housing operations for Virginia Tech.",
+      "bullets": [
+        "Led summer housing operations supporting 2,000+ students, managing guest services, coordinating large-scale logistics, and handling after-hours issues, improving overall efficiency by 17%"
+      ],
+      "tags": ["Operations", "Leadership", "Logistics"],
+      "genres": ["Leadership"],
+      "art": { "from": "#5b3a29", "to": "#140c07", "glyph": "HS" }
+    },
+
+    {
+      "id": "change-assurance",
+      "type": "project",
+      "title": "Change Assurance Runtime",
+      "subtitle": "for AI Coding Agents · VT Hacks 14",
+      "period": "Sep 2026",
+      "year": 2026,
+      "match": 99,
+      "rating": "HACKATHON",
+      "summary": "A local-first Windows runtime that puts AI coding agents under independent supervision: every process they spawn is attributed, every action is journaled in a tamper-evident log, and every change ships with a signed passport.",
+      "bullets": [
+        "Built a local-first Windows runtime using kill-on-close Job Objects and restricted-token process launches to attribute every descendant process by PID, image path, and command line",
+        "Designed a tamper-evident, hash-chained event journal with end-to-end replay verification and a signed Ed25519 Change Passport capturing intent, authority, evidence, and outcomes for every agent action",
+        "Shipped three clients (Textual TUI, CLI, Electron/React desktop) against one frozen OpenAPI contract of 66 operations, 61 routes, and 110 typed schemas",
+        "Validated by a threat-model review (15 of 16 findings fixed) and 1,022 passing tests"
+      ],
+      "tags": ["Python", "FastAPI", "Textual", "Electron", "React", "SQLite", "Ed25519", "Security"],
+      "genres": ["Security", "AI Agents", "Systems"],
+      "badge": "New",
+      "art": { "from": "#e50914", "to": "#2a0003", "glyph": "CA" }
+    },
+    {
+      "id": "job-search",
+      "type": "project",
+      "title": "Job Search Automation",
+      "subtitle": "A zero-cost daily pipeline on GitHub Actions",
+      "period": "2026",
+      "year": 2026,
+      "match": 95,
+      "rating": "OSS",
+      "summary": "Finds fresh job postings every morning, scores them against my resume, drafts tailored bullets, compiles a PDF, logs everything to a tracking spreadsheet, and emails a summary, all on free infrastructure.",
+      "bullets": [
+        "Discovers postings from public Greenhouse and Lever job-board APIs and other public boards on a GitHub Actions schedule, so there is no server to maintain",
+        "Scores each posting against the resume with the Gemini API and rewords the most relevant bullets for that role",
+        "Compiles a tailored LaTeX resume PDF, logs every posting to Google Sheets with an Eligibility column, and emails a morning summary",
+        "Backed by a test suite covering discovery quality, queueing, pipeline limits, and workflows"
+      ],
+      "tags": ["Python", "GitHub Actions", "Gemini API", "Google Sheets API", "LaTeX", "Automation"],
+      "genres": ["Automation", "LLMs", "Data Engineering"],
+      "links": [{ "label": "View Code", "url": "https://github.com/krishbansalofficial/job-search-automation" }],
+      "art": { "from": "#0369a1", "to": "#020d18", "glyph": "JS" }
+    },
+    {
+      "id": "regime",
+      "type": "project",
+      "title": "Regime Detection",
+      "subtitle": "& Adaptive Trading Strategies",
+      "period": "Mar 2026 – May 2026",
+      "year": 2026,
+      "match": 97,
+      "rating": "QUANT",
+      "summary": "A Gaussian Hidden Markov Model that detects market regimes from SPY and VIX data, plugged into a cost-aware backtester.",
+      "bullets": [
+        "Built a Gaussian Hidden Markov Model (HMM) in Python to detect market regimes from SPY/VIX data using volatility, momentum, liquidity, and volume features",
+        "Developed a transaction-cost-aware backtesting framework with filtered probability inference, benchmarked against K-Means and momentum strategies",
+        "Achieved a 57.97% return with ~34% lower volatility than Buy-and-Hold"
+      ],
+      "tags": ["Python", "pandas", "NumPy", "hmmlearn", "scikit-learn", "Backtesting"],
+      "genres": ["Quant", "Machine Learning"],
+      "badge": "57.97% Return",
+      "art": { "from": "#15803d", "to": "#03170a", "glyph": "HMM" }
+    },
+    {
+      "id": "real-estate",
+      "type": "project",
+      "title": "Real Estate Analyzer",
+      "subtitle": "VT Hacks 12",
+      "period": "Oct 2024 – Nov 2024",
+      "year": 2024,
+      "match": 94,
+      "rating": "HACKATHON",
+      "summary": "A price-prediction model trained on 428K+ listings, wrapped in a full-stack web prototype built at VT Hacks 12.",
+      "bullets": [
+        "Built a Boosted Decision Tree model predicting real estate prices with 97.5% accuracy (R² = 0.975) on 428K+ listings across 45+ U.S. states",
+        "Reduced MAE to $87.9K and RMSE to $181.8K via hyperparameter tuning and feature engineering in Azure ML Studio",
+        "Delivered a full-stack web prototype integrating the model with React.js, Node.js, and PostgreSQL for scalable price analysis"
+      ],
+      "tags": ["React", "Node.js", "PostgreSQL", "Azure ML Studio", "Boosted Trees"],
+      "genres": ["Machine Learning", "Full-Stack"],
+      "badge": "R² 0.975",
+      "art": { "from": "#b45309", "to": "#1c0d02", "glyph": "RE" }
+    },
+    {
+      "id": "playlist",
+      "type": "project",
+      "title": "Playlist Recommendation",
+      "subtitle": "Hybrid-filtering recommender",
+      "period": "Feb 2024 – May 2024",
+      "year": 2024,
+      "match": 93,
+      "rating": "PROJECT",
+      "summary": "A personalized recommender (yes, the Netflix kind) that ranks songs using hybrid filtering.",
+      "bullets": [
+        "Engineered a personalized playlist recommendation system in Java using hybrid filtering, processing 10K+ songs and 1K+ user preference profiles to generate ranked recommendations",
+        "Improved recommendation relevance by 35% through dynamic weighting and similarity scoring, reducing average selection time and increasing engagement"
+      ],
+      "tags": ["Java", "SQL", "Recommender Systems"],
+      "genres": ["Recommenders", "Backend"],
+      "art": { "from": "#9d174d", "to": "#1a0310", "glyph": "♪" }
+    },
+    {
+      "id": "inventory",
+      "type": "project",
+      "title": "Inventory Management",
+      "subtitle": "Java + relational SQL backend",
+      "period": "Aug 2023 – Oct 2023",
+      "year": 2023,
+      "match": 89,
+      "rating": "PROJECT",
+      "summary": "A scalable inventory system with real-time stock tracking, automated restocking, and invoicing.",
+      "bullets": [
+        "Architected a scalable inventory management system in Java with a relational SQL backend, supporting real-time stock tracking, automated restocking logic, and invoice generation, improving operational efficiency by 30%",
+        "Designed normalized database schemas and a modular OOP architecture, optimizing query performance and ensuring data integrity",
+        "Documented system design and scalability in a detailed Technical Design Document (TDD)"
+      ],
+      "tags": ["Java", "SQL", "OOP", "Database Design"],
+      "genres": ["Backend", "Databases"],
+      "art": { "from": "#475569", "to": "#0b0f14", "glyph": "INV" }
+    },
+    {
+      "id": "vex",
+      "type": "project",
+      "title": "VT CRO · VEX U",
+      "subtitle": "Competitive robotics",
+      "period": "Sep 2024 – Sep 2025",
+      "year": 2024,
+      "match": 88,
+      "rating": "ROBOTICS",
+      "summary": "Autonomous and driver-controlled robot software for VEX U competitions.",
+      "bullets": [
+        "Engineered autonomous and driver-controlled robotics systems in C++ for VEX U competitions",
+        "Collaborated with a multidisciplinary team to implement algorithms and tune sensor-driven precision"
+      ],
+      "tags": ["C++", "PROS", "Git", "Robotics"],
+      "genres": ["Robotics", "Embedded"],
+      "art": { "from": "#7c2d12", "to": "#140502", "glyph": "VEX" }
+    },
+    {
+      "id": "portfolio",
+      "type": "project",
+      "title": "This Portfolio",
+      "subtitle": "You're watching it right now",
+      "period": "Sep 2026",
+      "year": 2026,
+      "match": 100,
+      "rating": "META",
+      "summary": "A Netflix-style portfolio with per-viewer profiles, served by a small Node.js API.",
+      "bullets": [
+        "Express API composes a different home screen for each profile from one shared catalog",
+        "Tag-overlap similarity powers the \"More Like This\" shelf in every detail view",
+        "Contact messages persist server-side with validation, a honeypot, and per-IP rate limiting"
+      ],
+      "tags": ["Node.js", "Express", "JavaScript", "CSS"],
+      "genres": ["Full-Stack", "Web"],
+      "art": { "from": "#000000", "to": "#3f0003", "glyph": "N" }
+    },
+
+    {
+      "id": "skills-languages",
+      "type": "skills",
+      "title": "Languages",
+      "subtitle": "10 titles",
+      "summary": "Programming languages I work in.",
+      "tags": ["Java", "Python", "Swift", "C", "C++", "JavaScript", "TypeScript", "SQL", "R", "Ruby"],
+      "genres": ["Skills"],
+      "match": 98,
+      "art": { "from": "#1e3a8a", "to": "#050a1a", "glyph": "{ }" }
+    },
+    {
+      "id": "skills-frameworks",
+      "type": "skills",
+      "title": "Frameworks",
+      "subtitle": "9 titles",
+      "summary": "Web, desktop, and ML frameworks.",
+      "tags": ["FastAPI", "React.js", "Next.js", "Node.js", "Ruby on Rails", "Electron", "scikit-learn", "spaCy", "Bootstrap"],
+      "genres": ["Skills"],
+      "match": 97,
+      "art": { "from": "#6d28d9", "to": "#12051f", "glyph": "</>" }
+    },
+    {
+      "id": "skills-libraries",
+      "type": "skills",
+      "title": "Libraries",
+      "subtitle": "8 titles",
+      "summary": "Data, ML, and validation libraries.",
+      "tags": ["Pydantic", "pandas", "NumPy", "Matplotlib", "TensorFlow", "PyTorch", "Prophet", "hmmlearn"],
+      "genres": ["Skills"],
+      "match": 97,
+      "art": { "from": "#0e7490", "to": "#021317", "glyph": "λ" }
+    },
+    {
+      "id": "skills-databases",
+      "type": "skills",
+      "title": "Databases",
+      "subtitle": "4 titles",
+      "summary": "Relational and vector stores.",
+      "tags": ["PostgreSQL", "SQLite", "ChromaDB", "SQL"],
+      "genres": ["Skills"],
+      "match": 96,
+      "art": { "from": "#047857", "to": "#021a12", "glyph": "DB" }
+    },
+    {
+      "id": "skills-tools",
+      "type": "skills",
+      "title": "Developer Tools",
+      "subtitle": "6 titles",
+      "summary": "Infrastructure, MLOps, and design tools.",
+      "tags": ["Git", "Docker", "MLflow", "Azure ML Studio", "Google Cloud Platform", "Figma"],
+      "genres": ["Skills"],
+      "match": 95,
+      "art": { "from": "#a16207", "to": "#1a1002", "glyph": "⚙" }
+    }
+  ]
+}

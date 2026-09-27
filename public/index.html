@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Krish Bansal · Portfolio</title>
+  <meta name="description" content="Krish Bansal: Computer Science at Virginia Tech. Education, experience, and projects, Netflix style.">
+  <meta name="theme-color" content="#141414">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141414'/%3E%3Ctext x='16' y='26' font-family='Arial Black,Arial' font-weight='900' font-size='26' fill='%23e50914' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+
+  <!-- 1. Intro "ta-dum" -->
+  <section id="intro" class="screen intro" aria-label="Intro" hidden>
+    <div class="intro__logo" aria-hidden="true">
+      <span class="intro__letter">K</span>
+      <span class="intro__streaks"></span>
+    </div>
+    <button class="intro__skip" type="button">Skip intro</button>
+  </section>
+
+  <!-- 2. Who's watching? -->
+  <section id="picker" class="screen picker" aria-labelledby="picker-title" hidden>
+    <div class="picker__brand">KRISH BANSAL</div>
+    <h1 id="picker-title" class="picker__title">Who’s watching?</h1>
+    <ul class="picker__list" role="list"></ul>
+    <p class="picker__hint">Pick <strong>Recruiter</strong> for the resume cut, or <strong>Krish</strong> for the director’s cut.</p>
+  </section>
+
+  <!-- 3. Browse -->
+  <div id="browse" class="screen browse" hidden>
+    <header class="nav" id="nav">
+      <a class="nav__brand" href="#top" data-scroll="top" aria-label="Back to top">KRISH</a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#top" data-scroll="top">Home</a>
+        <a href="#experience" data-scroll="experience">Experience</a>
+        <a href="#projects" data-scroll="projects">Projects</a>
+        <a href="#education" data-scroll="education">Education</a>
+        <a href="#skills" data-scroll="skills">Skills</a>
+        <a href="#contact" data-action="contact">Contact</a>
+      </nav>
+      <div class="nav__right">
+        <form class="search" role="search">
+          <button class="search__toggle icon-btn" type="button" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+          </button>
+          <input class="search__input" type="search" placeholder="Titles, skills, tools" aria-label="Search portfolio" autocomplete="off">
+        </form>
+        <a class="nav__resume" href="Krish_Bansal_Resume.pdf" download data-track="resume">Resume</a>
+        <div class="account">
+          <button class="account__btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Switch profile">
+            <span class="account__avatar"></span>
+            <svg class="account__caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0h10L5 6z"/></svg>
+          </button>
+          <div class="account__menu" role="menu" hidden></div>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-live="polite"></section>
+      <div class="rows"></div>
+      <section class="results" hidden aria-live="polite">
+        <h2 class="results__title"></h2>
+        <div class="results__grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__links"></div>
+      <p class="footer__small">© <span class="footer__year"></span> Krish Bansal · Built with Node.js, Express &amp; vanilla JS. Not affiliated with Netflix.</p>
+    </footer>
+  </div>
+
+  <!-- Title detail modal -->
+  <dialog class="modal" id="detail" aria-labelledby="detail-title">
+    <button class="modal__close icon-btn" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
+    </button>
+    <div class="modal__body"></div>
+  </dialog>
+
+  <!-- Contact modal -->
+  <dialog class="modal modal--contact" id="contact" aria-labelledby="contact-title">
+    <button class="modal__close icon-btn" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
+    </button>
+    <div class="contact">
+      <h2 id="contact-title" class="contact__title">Let’s talk</h2>
+      <p class="contact__lede">Roles, research, or a project idea: send a message and it lands straight in my inbox queue.</p>
+      <form class="contact__form" novalidate>
+        <label class="field"><span>Name</span><input name="name" required maxlength="100" autocomplete="name"><small class="field__error"></small></label>
+        <label class="field"><span>Email</span><input name="email" type="email" required maxlength="200" autocomplete="email"><small class="field__error"></small></label>
+        <label class="field"><span>Company <em>(optional)</em></span><input name="company" maxlength="120" autocomplete="organization"><small class="field__error"></small></label>
+        <label class="field"><span>Message</span><textarea name="message" rows="5" required maxlength="2000"></textarea><small class="field__error"></small></label>
+        <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+        <button class="btn btn--red" type="submit">Send message</button>
+        <p class="contact__status" role="status"></p>
+      </form>
+      <div class="contact__direct"></div>
+    </div>
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
