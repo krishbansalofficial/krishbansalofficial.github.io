@@ -72,9 +72,7 @@
             "malloc",
             "regime",
             "streaming",
-            "real-estate",
-            "playlist",
-            "inventory"
+            "real-estate"
           ]
         },
         {
@@ -91,7 +89,6 @@
           "items": [
             "skills-languages",
             "skills-frameworks",
-            "skills-libraries",
             "skills-databases",
             "skills-tools"
           ]
@@ -632,6 +629,12 @@
       "commentary": [
         "The question behind this one: when an AI agent changes your machine, how do you prove what it actually did? Job Objects answer “which process,” the hash chain answers “in what order,” and the signed passport answers “on whose authority.”",
         "Freezing the OpenAPI contract early is what let three different clients be built against it in parallel during a hackathon."
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/krishbansalofficial/Sentinel"
+        }
       ]
     },
     {
@@ -690,8 +693,8 @@
       "summary": "A Gaussian Hidden Markov Model that detects market regimes from SPY and VIX data, plugged into a cost-aware backtester.",
       "bullets": [
         "Built a Gaussian Hidden Markov Model (HMM) in Python to detect market regimes from SPY/VIX data using volatility, momentum, liquidity, and volume features",
-        "Developed a transaction-cost-aware backtesting framework with filtered probability inference, benchmarked against K-Means and momentum strategies",
-        "Achieved a 57.97% return with ~34% lower volatility than Buy-and-Hold"
+        "Developed a transaction-cost-aware backtesting framework with filtered probability inference, benchmarked against K-Means and momentum strategies; trained on 2015–2020 and tested out of sample on Jan 2021 – May 2026 (5 bps costs)",
+        "Achieved a 57.97% return (Sharpe 0.83) with ~34% lower volatility and a −15.3% max drawdown vs. −24.5% for Buy-and-Hold"
       ],
       "tags": [
         "Python",
@@ -714,6 +717,12 @@
       "commentary": [
         "An HMM gives probabilities, not labels. Using filtered probabilities in the backtest keeps it honest, since each decision only sees data available at that moment.",
         "Benchmarking against K-Means and plain momentum is what makes the result mean something beyond “it made money in a backtest.”"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/krishbansalofficial/econ-project"
+        }
       ]
     },
     {
@@ -727,7 +736,7 @@
       "rating": "HACKATHON",
       "summary": "A price-prediction model trained on 428K+ listings, wrapped in a full-stack web prototype built at VT Hacks 12.",
       "bullets": [
-        "Built a Boosted Decision Tree model predicting real estate prices with 97.5% accuracy (R² = 0.975) on 428K+ listings across 45+ U.S. states",
+        "Built a Boosted Decision Tree model predicting real estate prices with R² = 0.975 on 428K+ listings across 45+ U.S. states",
         "Reduced MAE to $87.9K and RMSE to $181.8K via hyperparameter tuning and feature engineering in Azure ML Studio",
         "Delivered a full-stack web prototype integrating the model with React.js, Node.js, and PostgreSQL for scalable price analysis"
       ],
@@ -761,7 +770,7 @@
       "summary": "A personalized recommender (yes, the Netflix kind) that ranks songs using hybrid filtering.",
       "bullets": [
         "Engineered a personalized playlist recommendation system in Java using hybrid filtering, processing 10K+ songs and 1K+ user preference profiles to generate ranked recommendations",
-        "Improved recommendation relevance by 35% through dynamic weighting and similarity scoring, reducing average selection time and increasing engagement"
+        "Tuned relevance through dynamic weighting and similarity scoring across content and collaborative signals"
       ],
       "tags": [
         "Java",
@@ -789,7 +798,7 @@
       "rating": "PROJECT",
       "summary": "A scalable inventory system with real-time stock tracking, automated restocking, and invoicing.",
       "bullets": [
-        "Architected a scalable inventory management system in Java with a relational SQL backend, supporting real-time stock tracking, automated restocking logic, and invoice generation, improving operational efficiency by 30%",
+        "Architected an inventory management system in Java with a relational SQL backend, supporting real-time stock tracking, automated restocking logic, and invoice generation",
         "Designed normalized database schemas and a modular OOP architecture, optimizing query performance and ensuring data integrity",
         "Documented system design and scalability in a detailed Technical Design Document (TDD)"
       ],
@@ -1031,19 +1040,14 @@
       "id": "skills-languages",
       "type": "skills",
       "title": "Languages",
-      "subtitle": "10 titles",
+      "subtitle": "5 titles",
       "summary": "Programming languages I work in.",
       "tags": [
-        "Java",
         "Python",
-        "Swift",
         "C",
-        "C++",
-        "JavaScript",
-        "TypeScript",
+        "Java",
         "SQL",
-        "R",
-        "Ruby"
+        "TypeScript"
       ],
       "genres": [
         "Skills"
@@ -1058,19 +1062,15 @@
     {
       "id": "skills-frameworks",
       "type": "skills",
-      "title": "Frameworks",
-      "subtitle": "9 titles",
+      "title": "ML & Frameworks",
+      "subtitle": "5 titles",
       "summary": "Web, desktop, and ML frameworks.",
       "tags": [
-        "FastAPI",
-        "React.js",
-        "Next.js",
-        "Node.js",
-        "Ruby on Rails",
-        "Electron",
+        "PyTorch",
         "scikit-learn",
-        "spaCy",
-        "Bootstrap"
+        "pandas",
+        "FastAPI",
+        "React"
       ],
       "genres": [
         "Skills"
@@ -1112,13 +1112,11 @@
       "id": "skills-databases",
       "type": "skills",
       "title": "Databases",
-      "subtitle": "4 titles",
+      "subtitle": "2 titles",
       "summary": "Relational and vector stores.",
       "tags": [
         "PostgreSQL",
-        "SQLite",
-        "ChromaDB",
-        "SQL"
+        "ChromaDB"
       ],
       "genres": [
         "Skills"
@@ -1133,16 +1131,14 @@
     {
       "id": "skills-tools",
       "type": "skills",
-      "title": "Developer Tools",
-      "subtitle": "6 titles",
+      "title": "Tools & Cloud",
+      "subtitle": "4 titles",
       "summary": "Infrastructure, MLOps, and design tools.",
       "tags": [
-        "Git",
         "Docker",
         "MLflow",
-        "Azure ML Studio",
-        "Google Cloud Platform",
-        "Figma"
+        "Git",
+        "Google Cloud Platform"
       ],
       "genres": [
         "Skills"
