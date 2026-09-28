@@ -78,6 +78,10 @@ describe('catalog API', () => {
     assert.equal(item.title, 'Regime Detection');
     assert.ok(similar.length > 0);
     assert.ok(!similar.some((s) => s.id === 'regime' || s.type === 'skills'));
+    for (const s of similar) {
+      assert.ok(s.because.shared.length > 0, `${s.id} should explain its recommendation`);
+      assert.ok(s.because.score > 0 && s.because.score <= 1);
+    }
   });
 
   it('searches across titles, bullets, and tags (all terms must match)', async () => {

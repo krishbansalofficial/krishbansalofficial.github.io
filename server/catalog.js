@@ -62,24 +62,26 @@ export function loadCatalog(file) {
 
   // "More Like This": rank other items by Jaccard overlap of their tags and
   // genres. Skill cards are excluded because they overlap with everything.
+  // Each result carries `because: { shared, score }` so the UI can explain
+  // the recommendation instead of just asserting it.
   function similar(id, limit = 6) {
     const source = items.get(id);
     if (!source) return null;
-    const features = (item) =>
-      new Set([...(item.tags ?? []), ...(item.genres ?? [])].map((t) => t.toLowerCase()));
-    const a = features(source);
+    const labels = (item) => [...new Set([...(item.tags ?? []), ...(item.genres ?? [])])];
+    const a = new Set(labels(source).map((t) => t.toLowerCase()));
     return [...items.values()]
       .filter((item) => item.id !== id && item.type !== 'skills' && item.type !== 'series')
       .map((item) => {
-        const b = features(item);
-        const shared = [...a].filter((t) => b.has(t)).length;
+        const own = labels(item);
+        const b = new Set(own.map((t) => t.toLowerCase()));
+        const shared = own.filter((t) => a.has(t.toLowerCase()));
         const union = new Set([...a, ...b]).size || 1;
-        return { item, score: shared / union };
+        return { item, shared, score: shared.length / union };
       })
       .filter(({ score }) => score > 0)
       .sort((x, y) => y.score - x.score || y.item.year - x.item.year)
       .slice(0, limit)
-      .map(({ item }) => item);
+      .map(({ item, shared, score }) => ({ ...item, because: { shared, score: Math.round(score * 100) / 100 } }));
   }
 
   function search(query) {

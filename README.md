@@ -31,6 +31,10 @@ Optional environment variables:
 
 All content lives in **`data/portfolio.json`**:
 
+- `owner`: name, email, links, and resume path. `owner.facts` are the chips under the
+  Recruiter billboard (degree, graduation, GPA); `owner.availability`, when set, adds a green
+  "open to" chip in front of them. The picker also links the resume PDF directly.
+
 - `items`: every title (education, experience, project, skills) is defined **once**.
   `art.from`/`art.to` set the card gradient; `art.glyph` is the big background lettering;
   `badge` is the red corner tag.

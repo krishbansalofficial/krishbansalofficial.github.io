@@ -2,6 +2,12 @@
   "owner": {
     "name": "Krish Bansal",
     "headline": "Computer Science @ Virginia Tech",
+    "facts": [
+      "B.S. Computer Science, Virginia Tech",
+      "Graduating May 2027",
+      "GPA 3.62"
+    ],
+    "availability": "",
     "email": "krishbansal45@vt.edu",
     "links": [
       {
@@ -990,6 +996,12 @@
       "genres": [
         "Full-Stack",
         "Web"
+      ],
+      "links": [
+        {
+          "label": "View Code",
+          "url": "https://github.com/krishbansalofficial/krishbansalofficial.github.io"
+        }
       ],
       "art": {
         "from": "#000000",

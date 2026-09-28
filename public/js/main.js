@@ -60,8 +60,12 @@ async function showPicker() {
   const list = $('.picker__list');
   if (list.childElementCount) return;
   try {
-    const { profiles } = await api.profiles();
-    const tagline = { recruiter: 'The resume cut', krish: 'The director’s cut' };
+    const { owner, profiles } = await api.profiles();
+    const tagline = { recruiter: 'Start here · 30-second view', krish: 'The director’s cut' };
+    // For visitors who only want the PDF, don't make them pick a profile first.
+    $('.picker__quick').replaceChildren(
+      h('a', { href: owner.resumeUrl, download: true, dataset: { track: 'resume' } }, svg(icons.download), 'Download resume (PDF)'),
+      ...owner.links.map((link) => h('a', { href: link.url, target: '_blank', rel: 'noopener' }, link.label)));
     list.replaceChildren(
       ...profiles.map((p) =>
         h('li', {},
@@ -160,12 +164,29 @@ function renderHero({ hero: item, owner }) {
       h('div', { class: 'hero__kicker' }, h('b', {}, 'K'), TYPE_LABEL[item.type] ?? item.type),
       h('h1', { class: 'hero__title' }, item.title),
       h('p', { class: 'hero__subtitle' }, item.subtitle),
+      isSeries && heroFacts(owner),
       h('p', { class: 'hero__summary' }, item.summary),
-      h('div', { class: 'hero__actions' }, ...actions)),
+      h('div', { class: 'hero__actions' }, ...actions),
+      isSeries && heroLinks(owner)),
     item.rating && h('div', { class: 'hero__rating' }, item.rating),
   );
   // The hero's backdrop reuses the item's gradient.
   $('.hero__art').style.background = `linear-gradient(120deg, ${item.art.to} 0%, ${item.art.from} 100%)`;
+}
+
+// The five-second read for a recruiter: degree, graduation, and whether I'm
+// looking, above the summary so it lands before any scrolling or clicking.
+function heroFacts(owner) {
+  if (!owner.facts?.length && !owner.availability) return null;
+  return h('ul', { class: 'hero__facts' },
+    owner.availability && h('li', { class: 'hero__status' }, owner.availability),
+    ...(owner.facts ?? []).map((fact) => h('li', {}, fact)));
+}
+
+function heroLinks(owner) {
+  return h('p', { class: 'hero__links' },
+    h('a', { href: `mailto:${owner.email}` }, owner.email),
+    ...owner.links.map((link) => h('a', { href: link.url, target: '_blank', rel: 'noopener' }, link.label)));
 }
 
 function renderRows(page) {
@@ -414,7 +435,9 @@ async function openDetail(id) {
             h('span', { class: 'more-card__art', vars: artVars(s) }, s.title),
             h('span', { class: 'more-card__body' },
               h('span', { class: 'match' }, `${matchPct(s)}% Match · ${s.period ?? ''}`),
-              truncate(s.summary ?? '', 110)))))),
+              truncate(s.summary ?? '', 110),
+              s.because && h('span', { class: 'more-card__why', title: `Jaccard similarity of tags and genres: ${s.because.score}` },
+                h('span', { class: 'label' }, 'In common: '), s.because.shared.slice(0, 3).join(', '))))))),
   );
 
   if (!detail.open) detail.showModal();
