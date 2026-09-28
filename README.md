@@ -38,7 +38,26 @@ All content lives in **`data/portfolio.json`**:
   `variant: "ranked"` gives the Top-N numbered row, `"progress"` adds watch bars, and
   `section` makes the row a target for the nav links (Experience, Projects, …).
 
+Optional item fields:
+
+| Field | Effect |
+| --- | --- |
+| `episodeTitles` | One title per bullet; the detail view shows the bullets as a season of **Episodes**. Must match the bullet count (checked at startup). |
+| `progress` | 0–100 watch progress for "Continue Watching" rows. The preview shows the matching episode ("Continue S1:E3 · …"). |
+| `trailer` | Path to a short muted clip (e.g. `trailers/regime.webm` in `public/`) that plays in the hover preview. Without one, the card art plays an animated teaser. |
+| `lab: "backtest"` | Adds a **Run a Backtest** button that opens Backtest Theater. |
+
+A profile with `"hidden": true` is left out of the picker but still reachable by URL.
+
 The server validates every reference at startup, so a typo'd id fails fast.
+
+## Hidden extras
+
+- **Backtest Theater**: an in-browser SPY backtester (`public/js/backtest-engine.js`) running on
+  `public/data/spy.json`. Refresh the prices with `node scripts/fetch-spy.js`.
+- **Terminal mode**: press <kbd>`</kbd> anywhere (or *Terminal Mode* in the footer). Try `help`.
+- **Konami code** (↑↑↓↓←→←→BA): unlocks the secret Bloopers profile.
+- **Are you still watching?**: shown once per session after 2 idle minutes.
 Replace `public/Krish_Bansal_Resume.pdf` to update the downloadable resume.
 
 ## API
