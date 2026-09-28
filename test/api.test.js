@@ -57,6 +57,16 @@ describe('catalog API', () => {
     assert.deepEqual(recruiter.others.map((p) => p.id), ['krish']);
   });
 
+  it('keeps the Konami-code profile out of the picker but reachable by URL', async () => {
+    const { profiles } = await (await get('/api/profiles')).json();
+    assert.ok(!profiles.some((p) => p.id === 'bloopers'));
+    const res = await get('/api/browse/bloopers');
+    assert.equal(res.status, 200);
+    const page = await res.json();
+    assert.equal(page.hero.id, 'bloopers-reel');
+    assert.deepEqual(page.others.map((p) => p.id), ['recruiter', 'krish']);
+  });
+
   it('404s an unknown profile or item', async () => {
     assert.equal((await get('/api/browse/nobody')).status, 404);
     assert.equal((await get('/api/items/nope')).status, 404);
@@ -151,5 +161,14 @@ describe('catalog validation', () => {
       profiles: [{ id: 'p', hero: 'a', rows: [{ title: 'Row', items: ['a', 'ghost'] }] }],
     }));
     assert.throws(() => loadCatalog(file), /unknown item "ghost"/);
+  });
+
+  it('refuses to boot when episode titles and bullets are out of step', async () => {
+    const file = path.join(storageDir, 'bad-episodes.json');
+    await writeFile(file, JSON.stringify({
+      owner: {}, items: [{ id: 'a', bullets: ['one', 'two'], episodeTitles: ['Only one'] }],
+      profiles: [{ id: 'p', hero: 'a', rows: [] }],
+    }));
+    assert.throws(() => loadCatalog(file), /1 episode titles for 2 bullets/);
   });
 });

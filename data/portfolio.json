@@ -71,6 +71,7 @@
             "minibash",
             "malloc",
             "regime",
+            "backtest-lab",
             "streaming",
             "real-estate",
             "playlist",
@@ -125,6 +126,7 @@
         {
           "title": "Because Markets Are Just Data",
           "items": [
+            "backtest-lab",
             "regime",
             "dataism",
             "keshav",
@@ -155,6 +157,7 @@
             "minibash",
             "malloc",
             "regime",
+            "backtest-lab",
             "streaming",
             "real-estate",
             "playlist",
@@ -211,6 +214,50 @@
         }
       ],
       "commentary": true
+    },
+    {
+      "id": "bloopers",
+      "name": "Bloopers",
+      "color": "#7c3aed",
+      "face": "oops",
+      "hidden": true,
+      "commentary": true,
+      "hero": "bloopers-reel",
+      "rows": [
+        {
+          "title": "Plot Twists",
+          "items": [
+            "keshav",
+            "streaming",
+            "regime"
+          ]
+        },
+        {
+          "title": "It Deadlocked, It Leaked, It Segfaulted",
+          "section": "projects",
+          "items": [
+            "threadpool",
+            "malloc",
+            "minibash"
+          ]
+        },
+        {
+          "title": "Where It Started",
+          "items": [
+            "vex",
+            "inventory",
+            "playlist"
+          ]
+        },
+        {
+          "title": "Back to the Main Feature",
+          "items": [
+            "change-assurance",
+            "backtest-lab",
+            "portfolio"
+          ]
+        }
+      ]
     }
   ],
   "items": [
@@ -637,6 +684,12 @@
           "label": "GitHub",
           "url": "https://github.com/krishbansalofficial/Sentinel"
         }
+      ],
+      "episodeTitles": [
+        "Who Spawned That?",
+        "The Hash Chain",
+        "One Contract, Three Clients",
+        "1,022 Tests Later"
       ]
     },
     {
@@ -681,6 +734,12 @@
       },
       "commentary": [
         "Built to solve my own problem. Everything runs on free infrastructure, so it costs nothing to leave running every morning."
+      ],
+      "episodeTitles": [
+        "The Morning Crawl",
+        "Scored by Gemini",
+        "Compile, Log, Email",
+        "Trust but Test"
       ]
     },
     {
@@ -725,7 +784,46 @@
           "label": "GitHub",
           "url": "https://github.com/krishbansalofficial/econ-project"
         }
-      ]
+      ],
+      "episodeTitles": [
+        "Hidden States",
+        "Out of Sample",
+        "The Drawdown That Wasn’t"
+      ],
+      "lab": "backtest"
+    },
+    {
+      "id": "backtest-lab",
+      "type": "project",
+      "title": "Backtest Theater",
+      "subtitle": "An interactive original: trade SPY yourself",
+      "period": "Sep 2026",
+      "year": 2026,
+      "match": 99,
+      "rating": "LIVE",
+      "summary": "A backtester that runs in your browser. Pick a strategy, tune its parameters and trading costs, and compare it against Buy & Hold on 25 years of SPY prices.",
+      "bullets": [
+        "Four strategies (Buy & Hold, moving-average crossover, time-series momentum, and a volatility regime filter) on dividend-adjusted daily SPY closes since 2000",
+        "Lookahead-safe by construction: a position decided at one day’s close only earns the next day’s return, with trading costs charged on every position change",
+        "Reports CAGR, volatility, Sharpe, max drawdown, exposure, and trade count, with a log-scale equity chart drawn in plain SVG"
+      ],
+      "tags": [
+        "JavaScript",
+        "Backtesting",
+        "SVG",
+        "Quant Research"
+      ],
+      "genres": [
+        "Quant",
+        "Interactive"
+      ],
+      "badge": "Play Now",
+      "lab": "backtest",
+      "art": {
+        "from": "#0f766e",
+        "to": "#021614",
+        "glyph": "SPY"
+      }
     },
     {
       "id": "real-estate",
@@ -758,7 +856,12 @@
         "from": "#b45309",
         "to": "#1c0d02",
         "glyph": "RE"
-      }
+      },
+      "episodeTitles": [
+        "428K Listings",
+        "Tuning the Trees",
+        "Shipping the Prototype"
+      ]
     },
     {
       "id": "playlist",
@@ -787,7 +890,11 @@
         "from": "#9d174d",
         "to": "#1a0310",
         "glyph": "♪"
-      }
+      },
+      "episodeTitles": [
+        "Hybrid Filtering",
+        "Weighing the Signals"
+      ]
     },
     {
       "id": "inventory",
@@ -818,7 +925,12 @@
         "from": "#475569",
         "to": "#0b0f14",
         "glyph": "INV"
-      }
+      },
+      "episodeTitles": [
+        "Stock, Restock, Invoice",
+        "Normal Forms",
+        "The Design Doc"
+      ]
     },
     {
       "id": "vex",
@@ -848,7 +960,11 @@
         "from": "#7c2d12",
         "to": "#140502",
         "glyph": "VEX"
-      }
+      },
+      "episodeTitles": [
+        "Autonomous Mode",
+        "Team Tuning"
+      ]
     },
     {
       "id": "portfolio",
@@ -882,6 +998,11 @@
       },
       "commentary": [
         "Everything on this page comes from one JSON catalog. Each profile is just a different arrangement of the same titles, and this commentary only appears on the Krish profile."
+      ],
+      "episodeTitles": [
+        "One Catalog, Many Cuts",
+        "More Like This",
+        "Mail Call"
       ]
     },
     {
@@ -921,6 +1042,12 @@
       "commentary": [
         "The subtle part is the join. A worker that waits on a future nobody has started yet can deadlock the pool, so instead it “helps” and runs that task inline.",
         "Moving from one global lock to per-worker deques is where the speedup shows up, and also where Helgrind earns its keep."
+      ],
+      "episodeTitles": [
+        "Work Sharing",
+        "The Deadlock",
+        "Finer-Grained Locks",
+        "No Busy Waiting"
       ]
     },
     {
@@ -959,6 +1086,12 @@
       "commentary": [
         "Using posix_spawnp instead of fork + exec means every pipe and redirection has to be declared up front as a spawn file action, a stricter way to think about what a child process inherits.",
         "Exit statuses are the details you only notice when a script behaves differently from real bash: the last pipeline stage wins, and a process killed by a signal reports 128 + the signal number."
+      ],
+      "episodeTitles": [
+        "Parsing Bash",
+        "Spawn, Don’t Fork",
+        "Expansions",
+        "Reaping Children"
       ]
     },
     {
@@ -996,6 +1129,12 @@
       "commentary": [
         "Allocator design is a trade-off you can put a number on: the grading index weights space utilization 60% and throughput 40%, so every layout decision shows up in the score.",
         "When one wrong offset can silently corrupt the heap, small static helpers and assertions are what keep the code debuggable."
+      ],
+      "episodeTitles": [
+        "Aligned Blocks",
+        "Split & Coalesce",
+        "The 60/40 Index",
+        "Assert Everything"
       ]
     },
     {
@@ -1036,6 +1175,12 @@
       },
       "commentary": [
         "The plan changed mid-project: the Spotify and YouTube APIs were too rate-limited and sparse for genre data, so we switched to scraping MusicBrainz and mapping its subgenres to main genres."
+      ],
+      "episodeTitles": [
+        "Scraping the Charts",
+        "Plan B: MusicBrainz",
+        "Shorter Songs",
+        "Follow the Money"
       ]
     },
     {
@@ -1150,6 +1295,37 @@
         "from": "#a16207",
         "to": "#1a1002",
         "glyph": "⚙"
+      }
+    },
+    {
+      "id": "bloopers-reel",
+      "type": "series",
+      "title": "The Blooper Reel",
+      "subtitle": "Dead ends, plot twists, and negative results",
+      "period": "2023 – Present",
+      "year": 2026,
+      "match": 100,
+      "rating": "UNCUT",
+      "summary": "You found the secret profile. Every highlight on this site has a take that didn’t make the trailer: the model that lost, the API that gave up, the lock that deadlocked. These are the ones I learned the most from.",
+      "bullets": [
+        "The fancier forecasting model lost: Prophet failed to beat a naive seasonal baseline on 7 of 8 product lines, so the harness shipped the simpler one",
+        "Plan A died mid-project: the Spotify and YouTube APIs were too rate-limited for genre data, so the team switched to scraping MusicBrainz",
+        "A thread pool can deadlock itself when a worker waits on a task nobody has started; the fix was to have it run that task inline",
+        "One wrong pointer offset silently corrupts a heap, which is why the allocator lives behind small helpers and assertions"
+      ],
+      "tags": [
+        "Lessons Learned",
+        "Debugging",
+        "Negative Results"
+      ],
+      "genres": [
+        "Documentary",
+        "Comedy of Errors"
+      ],
+      "art": {
+        "from": "#7c3aed",
+        "to": "#0b0b0b",
+        "glyph": "OOPS"
       }
     }
   ]
