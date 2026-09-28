@@ -3,7 +3,8 @@
 //
 // In static mode (the GitHub Pages build, marked by <html data-mode="static">)
 // there is no server: reads come from pre-rendered JSON files, search runs in
-// the browser, the contact form hands off to the visitor's email app, and
+// the browser, the contact form sends through Web3Forms (falling back to the
+// visitor's email app), and
 // analytics are skipped. All paths are relative so the site works under any
 // base path (e.g. /repo-name/ on Pages).
 const STATIC = document.documentElement.dataset.mode === 'static';
@@ -60,12 +61,50 @@ async function staticSearch(query) {
   return { query, results };
 }
 
-async function emailContact(data) {
+// Web3Forms public access key (https://web3forms.com). It can only deliver to
+// the inbox it was registered with, so it's safe to ship in client code.
+// Leave empty to always use the mailto: hand-off.
+const WEB3FORMS_KEY = '2657a1c3-08b0-4b6b-9c6e-72d5d1699d2d';
+
+const contactSubject = (data) =>
+  `Portfolio message from ${data.name}${data.company ? ` (${data.company})` : ''}`;
+
+async function mailtoContact(data) {
   const { owner } = await api.profiles();
-  const subject = `Portfolio message from ${data.name}${data.company ? ` (${data.company})` : ''}`;
   const body = `${data.message}\n\n${data.name}\n${data.email}`;
-  location.href = `mailto:${owner.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  location.href = `mailto:${owner.email}?subject=${encodeURIComponent(contactSubject(data))}&body=${encodeURIComponent(body)}`;
   return { via: 'email' };
+}
+
+// Send through Web3Forms; if that fails for any reason (no key, offline,
+// timeout, quota, service error) fall back to the visitor's email app so the
+// message is never silently lost.
+async function emailContact(data) {
+  // Honeypot filled in: only bots do this. Pretend success, send nothing.
+  if (data.website) return { via: 'sent' };
+  if (!WEB3FORMS_KEY) return mailtoContact(data);
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: contactSubject(data),
+        from_name: data.name,
+        name: data.name,
+        email: data.email,
+        company: data.company || undefined,
+        message: data.message,
+      }),
+      signal: AbortSignal.timeout(10_000),
+    });
+    const body = await res.json().catch(() => null);
+    if (res.ok && body?.success) return { via: 'sent' };
+  } catch {
+    // Network error or timeout: fall through to mailto.
+  }
+  return mailtoContact(data);
 }
 
 export const api = {
