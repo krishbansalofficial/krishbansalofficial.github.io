@@ -21,7 +21,10 @@
       <span class="intro__letter">K</span>
       <span class="intro__streaks"></span>
     </div>
-    <button class="intro__skip" type="button">Skip intro</button>
+    <button class="intro__skip" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5v14l8-7zm8 0v14l8-7z"/></svg>
+      Skip Intro
+    </button>
   </section>
 
   <!-- 2. Who's watching? -->
@@ -107,6 +110,14 @@
       </form>
       <div class="contact__direct"></div>
     </div>
+  </dialog>
+
+  <!-- Backtest Theater (interactive SPY backtester) -->
+  <dialog class="modal modal--lab" id="lab" aria-labelledby="lab-title">
+    <button class="modal__close icon-btn" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
+    </button>
+    <div class="lab"></div>
   </dialog>
 
   <div class="toast" role="status" aria-live="polite"></div>

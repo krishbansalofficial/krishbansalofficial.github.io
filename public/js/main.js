@@ -1,6 +1,10 @@
 import { api } from './api.js';
+import { openLab } from './backtest.js';
 import { avatar, h, icons, svg } from './dom.js';
+import { initKonami, initStillWatching } from './extras.js';
+import { matchFor } from './match.js';
 import { playTadum } from './sound.js';
+import { initTerminal, openTerminal } from './terminal.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -113,6 +117,7 @@ async function showBrowse(profileId) {
   renderFooter(page.owner);
   renderContactLinks(page.owner);
   observeSections();
+  renderBecauseRow();
 }
 
 function skeletonRows() {
@@ -210,11 +215,22 @@ function artVars(item) {
   return { '--from': item.art?.from ?? '#333', '--to': item.art?.to ?? '#111' };
 }
 
-// Deterministic fake "watch progress" so it doesn't jump around between renders.
-function progressFor(id) {
+// Watch progress comes from the item's `progress` (0–100) in the catalog.
+// Without one, fall back to a deterministic stand-in so the bar doesn't jump
+// around between renders.
+function progressFor(item) {
+  if (Number.isFinite(item.progress)) return Math.max(0, Math.min(100, item.progress));
   let hash = 0;
-  for (const ch of id) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
+  for (const ch of item.id) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
   return 25 + (hash % 60);
+}
+
+// "Continue S1:E3 · The Deadlock": the episode the progress bar is sitting in.
+function nextEpisode(item) {
+  const titles = item.episodeTitles;
+  if (!titles?.length) return null;
+  const n = Math.min(titles.length, Math.floor((progressFor(item) / 100) * titles.length) + 1);
+  return `S1:E${n} · ${titles[n - 1]}`;
 }
 
 function card(item, { progress = false, label } = {}) {
@@ -228,12 +244,14 @@ function card(item, { progress = false, label } = {}) {
   h('span', { class: 'card__k', 'aria-hidden': 'true' }, 'K'),
   item.badge && h('span', { class: 'card__badge' }, item.badge),
   h('span', { class: 'card__title' }, item.title),
-  progress && h('span', { class: 'card__progress', vars: { '--p': `${progressFor(item.id)}%` } }, h('i')));
+  progress && h('span', { class: 'card__progress', vars: { '--p': `${progressFor(item)}%` } }, h('i')));
 }
+
+const matchPct = (item) => matchFor(item, state.page?.profile.id ?? 'recruiter');
 
 function metaLine(item) {
   return [
-    h('span', { class: 'match' }, `${item.match}% Match`),
+    h('span', { class: 'match' }, `${matchPct(item)}% Match`),
     item.rating && h('span', { class: 'rating' }, item.rating),
     item.period && h('span', {}, item.period),
   ];
@@ -250,7 +268,8 @@ function findItem(id) {
     const hit = row.items.find((i) => i.id === id);
     if (hit) return hit;
   }
-  return state.searchResults?.find((i) => i.id === id) ?? null;
+  return state.becauseItems?.find((i) => i.id === id)
+    ?? state.searchResults?.find((i) => i.id === id) ?? null;
 }
 
 function closePreview() {
@@ -273,13 +292,25 @@ function openPreview(cardEl) {
   const left = Math.min(Math.max(rect.left + rect.width / 2 - width / 2, 8), innerWidth - width - 8);
   const top = rect.top + rect.height / 2 - artHeight / 2;
 
+  // A real trailer (short muted clip, `trailer` in the catalog) if there is
+  // one; otherwise the card art plays a slow animated teaser.
+  const art = card(item);
+  if (item.trailer && !reducedMotion.matches) {
+    const video = h('video', { class: 'preview__trailer', src: item.trailer, loop: true, playsinline: true, preload: 'auto', 'aria-hidden': 'true' });
+    video.muted = true; // must be the property, not just the attribute, for autoplay
+    video.addEventListener('canplay', () => { video.classList.add('is-playing'); video.play().catch(() => {}); }, { once: true });
+    art.append(video);
+  }
+  const continuing = cardEl.querySelector('.card__progress') && nextEpisode(item);
+
   const el = h('div', {
-    class: 'preview', role: 'presentation',
+    class: `preview${item.trailer ? '' : ' preview--teaser'}`, role: 'presentation',
     onClick: () => openDetail(item.id),
     onMouseleave: closePreview,
   },
-  card(item),
+  art,
   h('div', { class: 'card__info' },
+    continuing && h('p', { class: 'card__continue' }, 'Continue ', h('b', {}, continuing)),
     h('div', { class: 'card__buttons' },
       h('span', { class: 'card__round card__round--play' }, svg(icons.play)),
       h('span', { class: 'card__round' }, svg(icons.plus)),
@@ -336,8 +367,12 @@ async function openDetail(id) {
   }
   const { item, similar } = data;
   api.track('item_open', item.id);
+  rememberWatched(item);
 
   const actions = [];
+  if (item.lab === 'backtest') {
+    actions.push(h('button', { class: 'btn btn--red', type: 'button', onClick: () => { detail.close(); openLab(); } }, svg(icons.play), 'Run a Backtest'));
+  }
   for (const link of item.links ?? []) {
     actions.push(h('a', { class: 'btn btn--white', href: link.url, target: '_blank', rel: 'noopener' }, svg(icons.code), link.label));
   }
@@ -352,7 +387,7 @@ async function openDetail(id) {
     h('p', { class: 'detail__summary' }, item.summary),
     isSkills
       ? h('ul', { class: 'chips' }, ...item.tags.map((t) => h('li', {}, t)))
-      : item.bullets?.length && h('ul', { class: 'detail__bullets' }, ...item.bullets.map((b) => h('li', {}, b))),
+      : !item.episodeTitles && item.bullets?.length && h('ul', { class: 'detail__bullets' }, ...item.bullets.map((b) => h('li', {}, b))),
     state.page?.profile.commentary === true && item.commentary?.length > 0 && h('aside', { class: 'commentary' },
       h('h3', { class: 'commentary__label' }, 'Director’s Commentary'),
       ...item.commentary.map((note) => h('p', {}, note))));
@@ -370,6 +405,7 @@ async function openDetail(id) {
         item.subtitle && h('p', { class: 'detail__subtitle' }, item.subtitle),
         h('div', { class: 'detail__actions' }, ...actions))),
     h('div', { class: 'detail__content' }, main, side),
+    item.episodeTitles && episodeList(item),
     similar?.length > 0 && h('section', { class: 'detail__more' },
       h('h3', {}, 'More Like This'),
       h('div', { class: 'more-grid' },
@@ -377,12 +413,61 @@ async function openDetail(id) {
           h('button', { class: 'more-card', type: 'button', onClick: () => openDetail(s.id) },
             h('span', { class: 'more-card__art', vars: artVars(s) }, s.title),
             h('span', { class: 'more-card__body' },
-              h('span', { class: 'match' }, `${s.match}% Match · ${s.period ?? ''}`),
+              h('span', { class: 'match' }, `${matchPct(s)}% Match · ${s.period ?? ''}`),
               truncate(s.summary ?? '', 110)))))),
   );
 
   if (!detail.open) detail.showModal();
   detail.scrollTop = 0;
+}
+
+// A project's bullets, presented as a season of episodes.
+function episodeList(item) {
+  return h('section', { class: 'episodes' },
+    h('div', { class: 'episodes__head' },
+      h('h3', {}, 'Episodes'),
+      h('span', { class: 'episodes__season' }, `Season 1${item.period ? ` · ${item.period}` : ''}`)),
+    h('ol', { class: 'episodes__list' },
+      ...item.episodeTitles.map((title, i) =>
+        h('li', { class: 'episode' },
+          h('span', { class: 'episode__num', 'aria-hidden': 'true' }, String(i + 1)),
+          h('span', { class: 'episode__thumb', vars: artVars(item), 'aria-hidden': 'true' }, `E${i + 1}`),
+          h('div', { class: 'episode__body' },
+            h('h4', { class: 'episode__title' }, title),
+            h('p', { class: 'episode__desc' }, item.bullets[i]))))));
+}
+
+// ------------------------------------------------------------------ because you watched
+
+const WATCHED_KEY = 'lastWatched';
+
+function rememberWatched(item) {
+  if (item.type === 'series' || item.type === 'skills') return;
+  try { localStorage.setItem(WATCHED_KEY, JSON.stringify({ id: item.id, title: item.title })); } catch { /* storage blocked */ }
+}
+
+function lastWatched() {
+  try { return JSON.parse(localStorage.getItem(WATCHED_KEY)); } catch { return null; }
+}
+
+// Slots a "Because you watched X" row in under the first row, built from the
+// same tag-similarity ranking as "More Like This".
+async function renderBecauseRow() {
+  const last = lastWatched();
+  const current = $('.row--because');
+  if (!last?.id || !state.page || current?.dataset.source === last.id) return;
+  let similar;
+  try {
+    ({ similar } = await api.item(last.id));
+  } catch {
+    return; // the title was removed from the catalog: just skip the row
+  }
+  if (!similar?.length || lastWatched()?.id !== last.id) return;
+  state.becauseItems = similar;
+  const row = renderRow({ title: `Because you watched ${last.title}`, variant: 'because', items: similar });
+  row.dataset.source = last.id;
+  $('.row--because')?.remove();
+  $('.rows > .row')?.after(row);
 }
 
 // ------------------------------------------------------------------ contact
@@ -568,10 +653,12 @@ document.addEventListener('click', (e) => {
 });
 
 // Modals: close button + click on backdrop
-for (const dialog of [detail, contact]) {
+for (const dialog of [detail, contact, $('#lab')]) {
   $('.modal__close', dialog).addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
 }
+// Coming back from a title updates the "Because you watched" row.
+detail.addEventListener('close', renderBecauseRow);
 
 // Resume download analytics (delegated so dynamically rendered links count too)
 document.addEventListener('click', (e) => {
@@ -586,6 +673,7 @@ function renderFooter(owner) {
     h('a', { href: owner.resumeUrl, download: true, dataset: { track: 'resume' } }, 'Resume (PDF)'),
     h('button', { type: 'button', onClick: openContact }, 'Contact'),
     h('button', { type: 'button', onClick: () => { location.hash = '#/'; } }, 'Switch Profile'),
+    h('button', { type: 'button', onClick: openTerminal, title: 'Or press ` anywhere' }, 'Terminal Mode'),
   );
 }
 
@@ -597,6 +685,33 @@ function toast(message) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.classList.remove('is-on'), 2600);
 }
+
+// ------------------------------------------------------------------ extras
+
+// Every title reachable from the visible profiles, for the terminal.
+async function allItems() {
+  const { profiles } = await api.profiles();
+  const pages = await Promise.all(profiles.map((p) => api.browse(p.id)));
+  const byId = new Map();
+  for (const page of pages) {
+    for (const item of [page.hero, ...page.rows.flatMap((r) => r.items)]) byId.set(item.id, item);
+  }
+  return [...byId.values()];
+}
+
+initTerminal({ items: allItems, owner: api.profiles, openDetail, openContact, openLab });
+
+initKonami(() => {
+  playTadum();
+  toast('Secret profile unlocked: Bloopers');
+  location.hash = '#/browse/bloopers';
+});
+
+initStillWatching({
+  isWatching: () => !screens.browse.hidden,
+  resumeUrl: () => state.owner?.resumeUrl ?? 'Krish_Bansal_Resume.pdf',
+  openContact,
+});
 
 // ------------------------------------------------------------------ boot
 
