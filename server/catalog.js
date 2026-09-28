@@ -17,10 +17,22 @@ export function loadCatalog(file) {
     }
   }
 
+  // Episode titles pair up with bullets by position, so a count mismatch
+  // would silently mislabel episodes.
+  for (const item of raw.items) {
+    if (item.episodeTitles && item.episodeTitles.length !== (item.bullets?.length ?? 0)) {
+      throw new Error(`Item "${item.id}" has ${item.episodeTitles.length} episode titles for ${item.bullets?.length ?? 0} bullets`);
+    }
+  }
+
   const profiles = new Map(raw.profiles.map((p) => [p.id, p]));
 
+  // Hidden profiles (the Konami-code Bloopers reel) are reachable by URL but
+  // never listed in the picker or the account menu.
   function listProfiles() {
-    return raw.profiles.map(({ id, name, color, face }) => ({ id, name, color, face }));
+    return raw.profiles
+      .filter((p) => !p.hidden)
+      .map(({ id, name, color, face }) => ({ id, name, color, face }));
   }
 
   function browse(profileId) {
@@ -85,6 +97,8 @@ export function loadCatalog(file) {
   return {
     owner: raw.owner,
     listProfiles,
+    // Every profile id, hidden ones included, for pre-rendering the static site.
+    allProfileIds: () => raw.profiles.map((p) => p.id),
     listItems: () => [...items.values()],
     browse,
     getItem,

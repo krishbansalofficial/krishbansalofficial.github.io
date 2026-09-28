@@ -21,7 +21,7 @@ await cp(path.join(ROOT, 'public'), DIST, { recursive: true });
 
 const profiles = catalog.listProfiles();
 await writeJson('profiles.json', { owner: catalog.owner, profiles });
-for (const { id } of profiles) await writeJson(`browse/${id}.json`, catalog.browse(id));
+for (const id of catalog.allProfileIds()) await writeJson(`browse/${id}.json`, catalog.browse(id));
 
 const items = catalog.listItems();
 for (const item of items) await writeJson(`items/${item.id}.json`, { item, similar: catalog.similar(item.id) });
