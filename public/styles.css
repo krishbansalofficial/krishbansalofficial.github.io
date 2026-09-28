@@ -654,6 +654,9 @@ a { color: inherit; }
   .detail__content { grid-template-columns: 1fr; gap: 12px; }
   .episode { grid-template-columns: 1.6rem minmax(0, 1fr); gap: 10px; padding: 14px 8px; }
   .episode__thumb { display: none; }
+  .episodes__head { padding-right: 44px; } /* clear the sticky close button */
+  /* With a 16:7 ratio, min-height would force the banner ~550px wide; let min-height alone size it. */
+  .detail__banner { aspect-ratio: auto; }
   .lab__readout { margin-left: 0; width: 100%; }
   .row__arrow { display: none; }
   .picker__brand { position: static; margin-bottom: 2rem; }

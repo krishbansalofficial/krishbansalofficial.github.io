@@ -595,7 +595,10 @@ searchInput.addEventListener('input', () => {
   }, 220);
 });
 searchInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') resetSearch();
+  if (e.key === 'Escape') {
+    resetSearch();
+    searchInput.blur(); // the box collapses; don't leave focus (and keystrokes) in it
+  }
 });
 searchInput.addEventListener('blur', () => {
   if (!searchInput.value) searchForm.classList.remove('is-open');
