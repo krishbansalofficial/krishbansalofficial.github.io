@@ -36,6 +36,7 @@ export const icons = {
 const faces = {
   smile: '<circle cx="34" cy="40" r="5"/><circle cx="66" cy="40" r="5"/><path d="M28 62q22 20 44 0" fill="none" stroke-width="6" stroke-linecap="round"/>',
   grin: '<rect x="28" y="34" width="10" height="10" rx="2"/><rect x="62" y="34" width="10" height="10" rx="2"/><path d="M26 58h48q-4 20-24 20t-24-20z"/>',
+  oops: '<path d="M28 34l12 12M40 34 28 46M60 34l12 12M72 34 60 46" fill="none" stroke-width="5" stroke-linecap="round"/><path d="M28 68q6-8 11 0t11 0 11 0 11 0" fill="none" stroke-width="5" stroke-linecap="round"/>',
 };
 
 export function avatar(profile, className = '') {
