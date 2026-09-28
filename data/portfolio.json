@@ -6,7 +6,7 @@
     "links": [
       {
         "label": "LinkedIn",
-        "url": "https://www.linkedin.com/in/krish-bansalofficial/"
+        "url": "https://www.linkedin.com/in/krishbansalofficial/"
       },
       {
         "label": "GitHub",
@@ -224,7 +224,7 @@
       "year": 2026,
       "match": 99,
       "rating": "TV-CS",
-      "summary": "Virginia Tech computer science student building ML systems, data pipelines, and backend services. Recently shipped a RAG pipeline and forecasting evaluation harness at Keshav Enterprises, researches deep-learning models for high-frequency markets, and builds tools for supervising AI coding agents.",
+      "summary": "Virginia Tech computer science student building ML systems, data pipelines, and backend services. Recently shipped a RAG pipeline and forecasting evaluation harness at Keshav Enterprises, researched deep-learning models for high-frequency markets, and builds tools for supervising AI coding agents.",
       "bullets": [
         "B.S. Computer Science, Virginia Tech (GPA 3.62 / 4.0, in-major 3.68)",
         "Dean's List five semesters, twice with Distinction",
@@ -262,7 +262,7 @@
       "summary": "The director’s cut. I like building things close to the metal and close to the markets: thread pools, shells, and allocators in C on one side, regime detection and forecasting harnesses in Python on the other. Lately I’ve been building tools that keep AI coding agents accountable.",
       "bullets": [
         "Now building: Change Assurance Runtime, a supervisor that proves what an AI coding agent actually did (VT Hacks 14)",
-        "Now researching: CNN–Transformer models for high-frequency market data at the Dataism Lab",
+        "Recently researched: CNN–Transformer models for high-frequency market data at the Dataism Lab",
         "Just shipped: a RAG pipeline and a forecasting evaluation harness at Keshav Enterprises",
         "Running every morning: a job-search pipeline on GitHub Actions that costs nothing to operate"
       ],
@@ -364,7 +364,7 @@
       "type": "experience",
       "title": "Dataism Lab",
       "subtitle": "Undergraduate Research Assistant · Quantitative Finance",
-      "period": "Nov 2025 – Present",
+      "period": "Oct 2025 – Aug 2026",
       "year": 2025,
       "match": 96,
       "rating": "RESEARCH",
@@ -385,7 +385,6 @@
         "Quant",
         "Deep Learning"
       ],
-      "badge": "Ongoing",
       "art": {
         "from": "#3a0ca3",
         "to": "#0b0420",
@@ -428,7 +427,7 @@
       "type": "experience",
       "title": "OpenDSA",
       "subtitle": "Research Assistant · Dept. of CS, Virginia Tech",
-      "period": "Jan 2025 – Apr 2025",
+      "period": "Jan 2025 – May 2025",
       "year": 2025,
       "match": 90,
       "rating": "RESEARCH",
@@ -458,7 +457,7 @@
       "type": "experience",
       "title": "VT Housing Services",
       "subtitle": "Summer Operations Assistant · Blacksburg, VA",
-      "period": "May 2025 – Aug 2025",
+      "period": "Apr 2025 – Oct 2025",
       "year": 2025,
       "match": 84,
       "rating": "OPS",
@@ -513,7 +512,7 @@
       "type": "experience",
       "title": "Kappa Theta Pi",
       "subtitle": "Founder Pledge Class · Virginia Tech",
-      "period": "Sep 2024 – Present",
+      "period": "Sep 2024 – Apr 2025",
       "year": 2024,
       "match": 88,
       "rating": "FOUNDER",
@@ -570,7 +569,7 @@
       "type": "experience",
       "title": "VT Indian Students Association",
       "subtitle": "Logistics Coordinator · Virginia Tech",
-      "period": "Aug 2023 – Nov 2023",
+      "period": "Sep 2023 – Nov 2023",
       "year": 2023,
       "match": 82,
       "rating": "LOGISTICS",
@@ -815,7 +814,7 @@
       "type": "project",
       "title": "VT CRO · VEX U",
       "subtitle": "Competitive robotics",
-      "period": "Sep 2024 – Sep 2025",
+      "period": "Sep 2024 – Apr 2025",
       "year": 2024,
       "match": 88,
       "rating": "ROBOTICS",
