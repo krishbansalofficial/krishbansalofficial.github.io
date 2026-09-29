@@ -419,7 +419,8 @@ async function openDetail(id) {
     h('p', {}, h('span', { class: 'label' }, 'Type: '), TYPE_LABEL[item.type] ?? item.type),
     item.period && h('p', {}, h('span', { class: 'label' }, 'Released: '), item.period));
 
-  body.replaceChildren(
+  // Native replaceChildren stringifies undefined/false, so drop the skipped sections first.
+  body.replaceChildren(...[
     h('div', { class: 'detail__banner', dataset: { glyph: item.art?.glyph ?? '' }, vars: artVars(item) },
       h('div', { class: 'detail__head' },
         h('h2', { class: 'detail__title', id: 'detail-title' }, item.title),
@@ -438,7 +439,7 @@ async function openDetail(id) {
               truncate(s.summary ?? '', 110),
               s.because && h('span', { class: 'more-card__why', title: `Jaccard similarity of tags and genres: ${s.because.score}` },
                 h('span', { class: 'label' }, 'In common: '), s.because.shared.slice(0, 3).join(', '))))))),
-  );
+  ].filter(Boolean));
 
   if (!detail.open) detail.showModal();
   detail.scrollTop = 0;
