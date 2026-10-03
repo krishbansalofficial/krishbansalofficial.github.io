@@ -381,8 +381,8 @@
       "bullets": [
         "Architected an end-to-end ELT pipeline in Python and PostgreSQL, normalizing sales inquiry and order data across 4 relational entities to replace manual spreadsheet tracking for an SME manufacturer",
         "Built a Retrieval-Augmented Generation (RAG) pipeline using ChromaDB vector search and the Claude API to auto-draft grounded customer replies, constraining outputs to retrieved catalog data to eliminate hallucinated pricing",
-        "Designed and ran an ML evaluation harness benchmarking Prophet time-series forecasts against a naive seasonal baseline across 8 product lines, using MLflow to gate model deployment — correctly rejected the more complex model in 7/8 cases due to limited (24-month) history",
-        "Achieved a 49% relative MAPE reduction (52.0% → 26.6%) with Prophet on the one product line where sufficient trend signal existed, validating that the harness caught a genuine case for deployment"
+        "Designed and ran an ML evaluation harness benchmarking Prophet time-series forecasts against a naive seasonal baseline across 8 product lines, using MLflow to gate model deployment — correctly rejected the more complex model in 6/8 cases due to limited (24-month) history",
+        "Achieved a 74% relative MAPE reduction (29.4% → 7.6%) with Prophet on the tractor counterweight line, the product with a sustained growth trend, validating that the harness caught a genuine case for deployment"
       ],
       "tags": [
         "Python",
@@ -407,8 +407,14 @@
         "glyph": "KE"
       },
       "commentary": [
-        "The most useful result here was a negative one. The evaluation harness rejected the fancier Prophet model on 7 of 8 product lines, because 24 months of history usually isn’t enough to beat a seasonal baseline.",
+        "The most useful result here was a negative one. The evaluation harness rejected the fancier Prophet model on 6 of 8 product lines, because 24 months of history usually isn’t enough to beat a seasonal baseline.",
         "The RAG replies are constrained to retrieved catalog data on purpose: a made-up price in a customer email is worse than no draft at all."
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/krishbansalofficial/keshav-ai-platform"
+        }
       ]
     },
     {
@@ -1320,7 +1326,7 @@
       "rating": "UNCUT",
       "summary": "You found the secret profile. Every highlight on this site has a take that didn’t make the trailer: the model that lost, the API that gave up, the lock that deadlocked. These are the ones I learned the most from.",
       "bullets": [
-        "The fancier forecasting model lost: Prophet failed to beat a naive seasonal baseline on 7 of 8 product lines, so the harness shipped the simpler one",
+        "The fancier forecasting model lost: Prophet failed to beat a naive seasonal baseline on 6 of 8 product lines, so the harness shipped the simpler one",
         "Plan A died mid-project: the Spotify and YouTube APIs were too rate-limited for genre data, so the team switched to scraping MusicBrainz",
         "A thread pool can deadlock itself when a worker waits on a task nobody has started; the fix was to have it run that task inline",
         "One wrong pointer offset silently corrupts a heap, which is why the allocator lives behind small helpers and assertions"
